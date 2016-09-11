@@ -13,7 +13,7 @@ ALTER TABLE `Orders`
 ALTER TABLE `Orders` 
 	DROP FOREIGN KEY `Orders_fk_DROP_OFF_LOCATION`;
 ALTER TABLE `Website Administrators` 
-	DROP FOREIGN KEY `Website Website_Administrators_fk_EMPLOYEE_ID`;
+	DROP FOREIGN KEY `Website_Administrators_fk_EMPLOYEE_ID`;
 ALTER TABLE `Customers Pickup Addresses` 
 	DROP FOREIGN KEY `Customers_Pickup_Addresses_ADDRESS_ID`;
 ALTER TABLE `Customers Pickup Addresses` 
