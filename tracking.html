@@ -5,7 +5,7 @@
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
 	
-	<link rel="stylesheet" href="bill.css">
+	<link rel="stylesheet">  <!-- href="bill.css" -->
 </head>
 
 <body>
@@ -16,13 +16,16 @@
 	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
 	<li class="navi"><a href="about.html">About</a></li>
 </ul>
-	<p class="orderhead">Track your package</p>
-	<br />
-	<p>
-			<label>Package ID</label>
-			<input type="text" style="width:75px;">
-		<p>
-			<input type="submit" value="Check Status">
-		</p>
-</body>
+</body>	
+	
+	<form action="tracking.php">
+		<fieldset>
+			<legend>Package ID</legend>
+			<input type="text" name="package_id"><br><br>
+			<input type="submit" value="Submit" onclick="trackPackage()">
+		</fieldset>
+	</form>
+
+
 </html>
+
