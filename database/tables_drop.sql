@@ -24,10 +24,10 @@ ALTER TABLE `Addresses`
 DROP TABLE IF EXISTS `Customers`;
 DROP TABLE IF EXISTS `Orders`;
 DROP TABLE IF EXISTS `Cost Weight`;
-DROP TABLE IF EXISTS `Employee`;
+DROP TABLE IF EXISTS `Employees`;
 DROP TABLE IF EXISTS `Status`;
 DROP TABLE IF EXISTS `Website Administrators`;
 DROP TABLE IF EXISTS `Customers Pickup Addresses`;
 DROP TABLE IF EXISTS `Addresses`;
 DROP TABLE IF EXISTS `Deliverable Postcodes`;
-DROP TABLE IF EXISTS `Recipent`;
+DROP TABLE IF EXISTS `Recipents`;
