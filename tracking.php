@@ -24,13 +24,29 @@
 		
 		echo "<p>Package ID:" . $_GET["package_id"] . "</p>";
 		
-		$query = "SELECT RECIPENT_ID FROM orders";
+		$query = "
+			SELECT * FROM orders
+
+			INNER JOIN customers
+			ON orders.CUSTOMER_ID=customers.CUSTOMER_ID
+			
+			INNER JOIN recipents
+			ON orders.RECIPENT_ID=recipents.RECIPENT_ID
+
+			INNER JOIN status
+			ON orders.STATUS_ID=status.STATUS_ID
+
+			INNER JOIN addresses
+			ON orders.DROP_OFF_LOCATION=addresses.ADDRESS_ID
+			
+			WHERE orders.ORDER_ID = " . $_GET["package_id"] . ";";
+		
 		$result = $link->query($query);
 		
 		if ($result->num_rows > 0) {
 		// output data of each row
 			while($row = $result->fetch_assoc()) {
-				echo "recipent_id: " . $row["RECIPENT_ID"] . "<br>";
+				echo implode("\t",$row) . "<br>";
 			}
 		} else {
 			echo "0 results";
