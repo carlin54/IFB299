@@ -40,7 +40,7 @@
 			ON orders.DROP_OFF_LOCATION=addresses.ADDRESS_ID
 			
 			WHERE orders.ORDER_ID = " . $_GET["package_id"] . ";";
-		
+		//There may be an issue with double joining
 		$result = $link->query($query);
 		
 		if ($result->num_rows > 0) {
