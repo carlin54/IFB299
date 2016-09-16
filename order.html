@@ -5,7 +5,7 @@
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
 	
-	<link rel="stylesheet" href="bill.css">
+	<link rel="stylesheet"> <!---href="bill.css"--->
 </head>
 
 <body>
@@ -17,96 +17,116 @@
 	<li class="navi"><a href="about.html">About</a></li>
 </ul>
 
-<div id="order">
-<form action="order.php" method="post">
-	<p class="orderhead">Personal Details</p>
-	<p>
-		<label for="name">Name</label>
-		<input type="text" id="name" name="name" style="width:250px;">
-	</p>
-	<p>
-		<label for="number">Mobile Number</label>
-		<input type="text" id="number" name="number"  style="width:100px;">
-	</p>
-	
-	<br>
-	<p class="orderhead">Pickup Location</p>
-	<p>Will you require the One the Spot to pick up your package?</p>
-	<p>
-		<input type="radio" name="pickup" value="yes" onclick="enablePickup()">Yes<br>
-		<input type="radio" name="pickup" value="no" onclick="disablePickup()">No<br>
-	</p>
-		<p>
-			<label for="pickupaddress">Address</label>
-			<input type="text" id="pickupadd" name="pickupaddress">
-		</p>
-		<p>
-			<label for="pickupsuburb">Suburb</label>
-			<input type="text" id="pickupsub" name="pickupsuburb" style="width:200px;">
-		</p>
-		<p>
-			<label for="pickuppostcode">PostCode</label>
-			<input type="text" id="pickuppost" name="pickuppostcode" style="width:75px;">
-		</p>
-	
-	<br>
-	<p class="orderhead">Delivery Location</p>
-		<p>
-			<label for="delivaddress">Address</label>
-			<input type="text" id="delivaddress" name="delivaddress">
-		</p>
-		<p>
-			<label for="delivsuburb">Suburb</label>
-			<input type="text" id="delivsuburb" name="delivsuburb" style="width:200px;">
-		</p>
-		<p>
-			<label for="delivpostcode">PostCode</label>
-			<input type="text" id="delivpostcode" name="delivpostcode" style="width:75px;">
-		</p>	
-	
-	<br>	
-	<p class="orderhead">Package Details</p>
-		<p>
-			<label for="descrip">Description</label>
-			<input type="text" id="descrip" name="descrip">
-		</p>
-		<p>
-			<label for="size">Size</label>
-			<input type="text" id="size" name="size" style="width:200px;">
-		</p>
-		<p>
-			<label for="weight">Weight</label>
-			<input type="text" id="weight" name="weight" style="width:75px;">
-		</p>
-		<p>
-			<input type="submit" value="Calculate Cost">
-		</p>
-		<p>
-			<label for="calccost">Cost</label>
-			<input type="text" id="calccost" name="calccost" style="width:75px" readonly>
-		</p>
-		
-	<p>
-		<input type="submit" value="Submit Order">
-	</p>
-</form>
-</div>
-<script>
-function disablePickup() {
-	console.log("Disable");
-	document.getElementById("pickupadd").disabled = true;
-	document.getElementById("pickupsub").disabled = true;
-	document.getElementById("pickuppost").disabled = true;
-	console.log(document.getElementById("pickupadd").disabled);
-}
-function enablePickup() {
-	console.log("Enable");
-	document.getElementById("pickupadd").disabled = false;
-	document.getElementById("pickupsub").disabled = false;
-	document.getElementById("pickuppost").disabled = false;
-	console.log(document.getElementById("pickupadd").disabled);
-}
-</script>
+<div id="order">	
+	<form action="order.php" method="post">
+		<fieldset>
+		<legend><h1>Order Form</h1></legend>
+		<br>
+		<p class="orderhead"><h2>Pickup Address</h2></p>
 
+			<p>
+				<label for="pickup_first_line">First Line</label>
+				<input type="text" name="pickup_first_line">
+			</p>
+			
+			<p>
+				<label for="pickup_second_line">Second Line</label>
+				<input type="text" name="pickup_second_line">
+			</p>
+			
+			<p>
+				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
+				<input type="text" name="pickup_postcode">
+			</p>
+			
+			<p>
+				<label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_suburb">
+			</p>
+			
+			<p>
+				<label for="pickup_state">State</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_state">
+			</p>
+			
+			<p>
+				<label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_country">
+			</p>
+			
+		<br>
+		
+			<p class="orderhead"><h2>Recipent Details</h2></p>
+			<p>
+				<label for="recipent_first_name">First Name</label>
+				<input type="text" name="recipent_first_name">
+			</p>
+			<p>
+				<label for="recipent_last_name">Last Name</label>
+				<input type="text" name="recipent_last_name">
+			</p>
+		
+		<br>
+		
+		<p class="orderhead"><h2>Drop-off Location</h2></p>
+		
+			<p>
+				<label for="dropoff_first_line">First Line</label>
+				<input type="text" name="dropoff_first_line">
+			</p>
+			
+			<p>
+				<label for="dropoff_second_line">Second Line</label>
+				<input type="text" name="dropoff_second_line">
+			</p>
+			
+			<p>
+				<label for="dropoff_postcode">Postcode</label> <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_postcode">
+			</p>
+			
+			<p>
+				<label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_suburb">
+			</p>
+			
+			<p>
+				<label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_state">
+			</p>
+			
+			<p>
+				<label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_country">
+			</p>
+		
+		<br>	
+		<p class="orderhead"><h2>Package Details</h2></p>
+			<p>
+				<label for="package_description">Description</label>
+				<input type="text" name="package_description">
+			</p>
+			<p>
+				<label for="package_size">Size</label>
+				<input type="text" name="package_size">
+			</p>
+			<p>
+				<label for="package_weight">Weight</label>
+				<input type="text" name="package_weight">
+			</p>
+			<p>
+				<input type="submit" value="Calculate Cost">
+			</p>
+			<p>
+				<label for="cost_calculator">Cost</label>
+				<input type="text" name="cost_calculator" readonly>
+			</p>
+			
+		<p>
+			<input type="submit" value="Submit Order">
+		</p>
+		</fieldset>
+	</form>
+</div>
 </body>
 </html>
