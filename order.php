@@ -5,7 +5,7 @@
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
 	
-	<link rel="stylesheet" href="bill.css">
+	<link rel="stylesheet"> <!---href="bill.css"--->
 </head>
 
 <body>
@@ -17,70 +17,124 @@
 	<li class="navi"><a href="about.html">About</a></li>
 </ul>
 
-<p>
+<div id="order">	
+	<form action="order.php" method="post">
+		<fieldset>
+		<legend><h1>Order Form</h1></legend>
+		<br>
+		<p class="orderhead"><h2>Pickup Address</h2></p>
 
-	<?php
+			<p>
+				<label for="pickup_first_line">First Line</label>
+				<input type="text" name="pickup_first_line" value="<?php echo $_GET["pickup_first_line"]; ?>">
+			</p>
+			
+			<p>
+				<label for="pickup_second_line">Second Line</label>
+				<input type="text" name="pickup_second_line" value="<?php echo $_GET["pickup_second_line"]; ?>">
+			</p>
+			
+			<p>
+				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
+				<input type="text" name="pickup_postcode" value="<?php echo $_GET["pickup_postcode"]; ?>">
+			</p>
+			
+			<p>
+				<label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_suburb" value="<?php echo $_GET["pickup_suburb"]; ?>">
+			</p>
+			
+			<p>
+				<label for="pickup_state">State</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_state" value="<?php echo $_GET["pickup_state"]; ?>">
+			</p>
+			
+			<p>
+				<label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
+				<input type="text" name="pickup_country" value="<?php echo $_GET["pickup_country"]; ?>">
+			</p>
+			
+		<br>
 		
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "ifb299";
+			<p class="orderhead"><h2>Recipent Details</h2></p>
+			<p>
+				<label for="recipent_first_name">First Name</label>
+				<input type="text" name="recipent_first_name" value="<?php echo $_GET["recipent_first_name"]; ?>">
+			</p>
+			<p>
+				<label for="recipent_last_name">Last Name</label>
+				<input type="text" name="recipent_last_name" value="<?php echo $_GET["recipent_last_name"]; ?>">
+			</p>
 		
-		function pickup_location_data_check($link, $first_line, $second_line, $postcode, $suburb, $state, $country){
-			return false;
-		}
+		<br>
 		
-		function recipent_data_check($link, $first_name, $last_name){
-			return false;
-		}
+		<p class="orderhead"><h2>Drop-off Location</h2></p>
 		
-		function dropoff_location_data_check($link, $first_line, $second_line, $postcode, $suburb, $state, $country){
-			return false;
-		}
+			<p>
+				<label for="dropoff_first_line">First Line</label>
+				<input type="text" name="dropoff_first_line" value="<?php echo $_GET["dropoff_first_line"]; ?>">
+			</p>
+			
+			<p>
+				<label for="dropoff_second_line">Second Line</label>
+				<input type="text" name="dropoff_second_line" value="<?php echo $_GET["dropoff_second_line"]; ?>">
+			</p>
+			
+			<p>
+				<label for="dropoff_postcode">Postcode</label> <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_postcode" value="<?php echo $_GET["dropoff_postcode"]; ?>">
+			</p>
+			
+			<p>
+				<label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_suburb" value="<?php echo $_GET["dropoff_suburb"]; ?>">
+			</p>
+			
+			<p>
+				<label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_state" value="<?php echo $_GET["dropoff_state"]; ?>">
+			</p>
+			
+			<p>
+				<label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
+				<input type="text" name="dropoff_country" value="<?php echo $_GET["dropoff_country"]; ?>">
+			</p>
 		
-		function package_data_check($link, $description, $size, $weight){
-			return false;
-		}
-		
-
-		
-		$link = mysqli_connect($servername, $username, $password, $dbname);
-		
-		if (!$link) {
-			echo "<p>Error: Unable to connect to MySQL." . PHP_EOL . "</p>";
-			echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
-			echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
-			exit;
-		}
-		
-		$pickup_first_line = $_GET["pickup_first_line"];
-		$pickup_second_line = $_GET["pickup_second_line"];
-		$pickup_postcode = $_GET["pickup_postcode"];
-		$pickup_suburb = $_GET["pickup_suburb"];
-		$pickup_state = $_GET["pickup_state"];
-		$pickup_country = $_GET["pickup_country"];
-		
-		$recipent_first_name = $_GET["recipent_first_name"];
-		$recipent_last_name = $_GET["recipent_last_name"];
-		
-		$dropoff_first_line = $_GET["dropoff_first_line"];
-		$dropoff_second_line = $_GET["dropoff_second_line"];
-		$dropoff_postcode = $_GET["dropoff_postcode"];
-		$dropoff_suburb = $_GET["dropoff_suburb"];
-		$dropoff_state = $_GET["dropoff_state"];
-		$dropoff_country = $_GET["dropoff_country"];
-		
-		$package_description = $_GET["package_description"];
-		$package_length = $_GET["package_length"];
-		$package_width = $_GET["package_width"];
-		$package_height = $_GET["package_height"];
-		$package_weight = $_GET["package_weight"];
-		
-		
-		mysqli_close($link);
-?>
-
-</p>
-
+		<br>	
+		<p class="orderhead"><h2>Package Details</h2></p>
+			<p>
+				<label for="package_description">Description</label>
+				<input type="text" name="package_description" value="<?php echo $_GET["package_description"]; ?>">
+			</p>
+			<p>
+				<label for="package_length">Length</label>
+				<input type="text" name="package_length" value="<?php echo $_GET["package_length"]; ?>">
+			</p>
+			<p>
+				<label for="package_width">Width</label>
+				<input type="text" name="package_width" value="<?php echo $_GET["package_width"]; ?>">
+			</p>
+			<p>
+				<label for="package_height">Height</label>
+				<input type="text" name="package_height" value="<?php echo $_GET["package_height"]; ?>">
+			</p>
+			<p>
+				<label for="package_weight">Weight</label>
+				<input type="text" name="package_weight" value="<?php echo $_GET["package_weight"]; ?>">
+			</p>
+			<p>
+				<input type="submit" value="Calculate Cost">
+			</p>
+			<p>
+				<label for="cost_calculator">Cost</label>
+				<input type="text" name="cost_calculator" readonly>
+			</p>
+			
+		<p>
+			<input type="submit" value="Submit Order">
+		</p>
+		</fieldset>
+	</form>
+</div>
 </body>
 </html>

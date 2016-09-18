@@ -20,8 +20,8 @@
 	
 	<form action="tracking.php">
 		<fieldset>
-			<legend>Package ID</legend>
-			<input type="text" name="package_id" value="<?php echo $_GET["package_id"]; ?>"><br>
+			<legend>Package Infomation</legend>
+			
 			<?php
 				$servername = "localhost";
 				$username = "root";
@@ -73,7 +73,7 @@
 				$result = $link->query($query);
 				
 				if ($result->num_rows == 0){
-					echo "<p>Sorry, package not found</p>";
+					echo "<p>Sorry, package not found.</p>";
 				}else if($result->num_rows == 1){
 					$row = $result->fetch_assoc();
 					
@@ -118,9 +118,9 @@
 								<th>STATUS</th>
 								<th>SIZE</th>
 								<th>WEIGHT</th>
-								<th>DATE_OF_ORDER</th>
-								<th>DATE_OF_PICKUP</th>
-								<th>DATE_OF_DELIVERY</th>
+								<th>DATE OF ORDER</th>
+								<th>DATE OF PICKUP</th>
+								<th>DATE OF DELIVERY</th>
 							</tr>
 							<tr>
 								<td>$". $row['COST'] 				. "</td>

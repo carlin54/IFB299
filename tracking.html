@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -18,10 +21,13 @@
 </ul>
 </body>	
 	
-	<form action="tracking.php">
+	<form action="tracking.php" onsubmit="return validate()">
 		<fieldset>
 			<legend>Package ID</legend>
-			<input type="text" name="package_id"><br><br>
+			<input type="text" name="package_id" id="package_id" onsubmit="checkPackageID(this);">
+			<label id="error_package_id"></label>
+			<br>
+			<br>
 			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
@@ -29,3 +35,20 @@
 
 </html>
 
+<script type="text/javascript">
+
+function validate_package_id(){
+	var package_id = document.getElementsByName('package_id')[0].value;
+	
+	if(package_id == ""){
+		document.getElementById('error_package_id').innerHTML = '\tPlease enter the package\'s tracking number.';
+		return false;
+	}
+	
+	return true;
+}
+
+function validate() {
+	return validate_package_id();
+}
+</script>
