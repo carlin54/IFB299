@@ -71,7 +71,9 @@
 		$dropoff_country = $_GET["dropoff_country"];
 		
 		$package_description = $_GET["package_description"];
-		$package_size = $_GET["package_size"];
+		$package_length = $_GET["package_length"];
+		$package_width = $_GET["package_width"];
+		$package_height = $_GET["package_height"];
 		$package_weight = $_GET["package_weight"];
 		
 		
