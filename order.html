@@ -327,7 +327,7 @@ function validate_length(str, lbl){
 		lbl.innerHTML = 'This is too long (max : 300cm)!';
 		return false;
 	}
-	return false;
+	return true;
 }
 function validate_width(str, lbl){
 	lbl.innerHTML = '';
@@ -466,8 +466,7 @@ function validate() {
 	&&		validate_length			(str_length, 				lbl_length)
 	&&		validate_width			(str_width, 				lbl_width)
 	&& 		validate_height			(str_height, 				lbl_height)
-	&& 		validate_weight			(str_weight, 				lbl_weight)
-	&& 		false;
+	&& 		validate_weight			(str_weight, 				lbl_weight);
 	
 	
 }
