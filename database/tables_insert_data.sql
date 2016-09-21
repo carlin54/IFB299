@@ -1,5 +1,5 @@
 /*Cost Weight*/
-INSERT INTO `Cost Weight` (`SIZE_SCALER`,`WEIGHT_SCALER`) VALUES ('4.0','1.2');
+INSERT INTO `Cost Weight` (`SIZE_SCALER`,`WEIGHT_SCALER`,`DATE_ADDED`) VALUES ('0.01','0.01','2015-11-11');
 
 /*Deliverable Postcodes*/
 INSERT INTO `Deliverable Postcodes`  (`POSTCODE`) VALUES ('4000');
