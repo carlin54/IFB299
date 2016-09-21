@@ -41,29 +41,29 @@
 				$sender_first_name = strtoupper("TO IMPLEMENT");
 				$sender_last_name = strtoupper("TO IMPLEMENT");
 				
-				$pickup_first_line = strtoupper($_GET['pickup_first_line']);
-				$pickup_second_line = strtoupper($_GET['pickup_second_line']);
-				$pickup_postcode = $_GET['pickup_postcode'];
-				$pickup_suburb = strtoupper($_GET['pickup_suburb']);
-				$pickup_state = strtoupper($_GET['pickup_state']);
-				$pickup_country = strtoupper($_GET['pickup_country']);
+				$_SESSION['pickup_first_line'] = $pickup_first_line = strtoupper($_GET['pickup_first_line']);
+				$_SESSION['pickup_second_line'] = $pickup_second_line = strtoupper($_GET['pickup_second_line']);
+				$_SESSION['pickup_postcode'] = $pickup_postcode = $_GET['pickup_postcode'];
+				$_SESSION['pickup_suburb'] = $pickup_suburb = strtoupper($_GET['pickup_suburb']);
+				$_SESSION['pickup_state'] = $pickup_state = strtoupper($_GET['pickup_state']);
+				$_SESSION['pickup_country'] = $pickup_country = strtoupper($_GET['pickup_country']);
 				
-				$recipent_first_name = strtoupper($_GET['recipent_first_name']);
-				$recipent_last_name = strtoupper($_GET['recipent_last_name']);
+				$_SESSION['recipent_first_name'] = $recipent_first_name = strtoupper($_GET['recipent_first_name']);
+				$_SESSION['recipent_last_name'] = $recipent_last_name = strtoupper($_GET['recipent_last_name']);
 				
-				$dropoff_first_line = strtoupper($_GET['dropoff_first_line']);
-				$dropoff_second_line = strtoupper($_GET['dropoff_second_line']);
-				$dropoff_postcode = $_GET['dropoff_postcode'];
-				$dropoff_suburb = strtoupper($_GET['dropoff_suburb']);
-				$dropoff_state = strtoupper($_GET['dropoff_state']);
-				$dropoff_country = strtoupper($_GET['dropoff_country']);
+				$_SESSION['dropoff_first_line'] = $dropoff_first_line = strtoupper($_GET['dropoff_first_line']);
+				$_SESSION['dropoff_second_line'] = $dropoff_second_line = strtoupper($_GET['dropoff_second_line']);
+				$_SESSION['dropoff_postcode'] = $dropoff_postcode = $_GET['dropoff_postcode'];
+				$_SESSION['dropoff_suburb'] = $dropoff_suburb = strtoupper($_GET['dropoff_suburb']);
+				$_SESSION['dropoff_state'] = $dropoff_state = strtoupper($_GET['dropoff_state']);
+				$_SESSION['dropoff_country'] = $dropoff_country = strtoupper($_GET['dropoff_country']);
 				
-				$package_description = strtoupper($_GET['package_description']);
-				$package_length = $_GET['package_length'];
-				$package_width = $_GET['package_width'];
-				$package_height = $_GET['package_height'];
-				$package_weight = $_GET['package_weight'];
-				$package_m3 = $package_length * $package_width * $package_height;
+				$_SESSION['package_description'] = $package_description = strtoupper($_GET['package_description']);
+				$_SESSION['package_length'] = $package_length = $_GET['package_length'];
+				$_SESSION['package_width'] = $package_width = $_GET['package_width'];
+				$_SESSION['package_height'] = $package_height = $_GET['package_height'];
+				$_SESSION['package_weight'] = $package_weight = $_GET['package_weight'];
+				$_SESSION['package_m3'] = $package_m3 = $package_length * $package_width * $package_height;
 				
 				
 				$package_m3_scalar = 0.0;
@@ -175,7 +175,7 @@
 								
 				?>
 				
-			<input type="submit" value="Confirm">
+			<input type="submit" value="Submit Order">
 
 		</fieldset>
 	</form>
