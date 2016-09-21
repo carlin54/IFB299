@@ -18,121 +18,165 @@
 </ul>
 
 <div id="order">	
-	<form action="order.php" method="post">
+	<form action="submit_order.php">
 		<fieldset>
-		<legend><h1>Order Form</h1></legend>
-		<br>
-		<p class="orderhead"><h2>Pickup Address</h2></p>
+		<legend>Order Information</legend>
+			<?php
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$dbname = "ifb299";
+		
+				$link = mysqli_connect($servername, $username, $password, $dbname);
+		
+				if (!$link) {
+					echo "<p>Error: Unable to connect to MySQL." . PHP_EOL . "</p>";
+					echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
+					echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
+					exit;
+				} else {
+					echo "<p>Success: Connect to MySQL.</p>";
+				}
+				
+				$sender_first_name = strtoupper("TO IMPLEMENT");
+				$sender_last_name = strtoupper("TO IMPLEMENT");
+				
+				$pickup_first_line = strtoupper($_GET['pickup_first_line']);
+				$pickup_second_line = strtoupper($_GET['pickup_second_line']);
+				$pickup_postcode = $_GET['pickup_postcode'];
+				$pickup_suburb = strtoupper($_GET['pickup_suburb']);
+				$pickup_state = strtoupper($_GET['pickup_state']);
+				$pickup_country = strtoupper($_GET['pickup_country']);
+				
+				$recipent_first_name = strtoupper($_GET['recipent_first_name']);
+				$recipent_last_name = strtoupper($_GET['recipent_last_name']);
+				
+				$dropoff_first_line = strtoupper($_GET['dropoff_first_line']);
+				$dropoff_second_line = strtoupper($_GET['dropoff_second_line']);
+				$dropoff_postcode = $_GET['dropoff_postcode'];
+				$dropoff_suburb = strtoupper($_GET['dropoff_suburb']);
+				$dropoff_state = strtoupper($_GET['dropoff_state']);
+				$dropoff_country = strtoupper($_GET['dropoff_country']);
+				
+				$package_description = strtoupper($_GET['package_description']);
+				$package_length = $_GET['package_length'];
+				$package_width = $_GET['package_width'];
+				$package_height = $_GET['package_height'];
+				$package_weight = $_GET['package_weight'];
+				$package_m3 = $package_length * $package_width * $package_height;
+				
+				
+				$package_m3_scalar = 0.0;
+				$package_weight_scalar = 0.0;
+				$cost_query = "
+					SELECT * FROM `cost weight`
+					ORDER BY DATE_ADDED;";
+				$cost_result = $link->query($cost_query);
+				if ($cost_result->num_rows == 0){
+					echo "<p>Sorry, cannot no cost scalers in database.</p>";
+				}else if($cost_result->num_rows > 0){
+					$row = $cost_result->fetch_assoc();
+					$package_m3_scalar = $row['SIZE_SCALER'];
+					$package_weight_scalar = $row['WEIGHT_SCALER'];
+				}
+				
+				$package_cost = $package_m3 * $package_m3_scalar + $package_weight * $package_weight_scalar;
+				
+				echo "<h2><u>Sender</u></h2>";
+				echo "<table>
+					<tr>
+						<th>FIRST NAME</th>
+						<th>LAST NAME</th>
+					</tr>
+					<tr>
+						<td>" . $sender_first_name . "</td>
+						<td>" . $sender_last_name . "</td>
+					</tr>
+				</table><p>";
+				echo "<br>";
+				
+				echo "<h2><u>Pickup Address</u></h2>";
+				echo "<table>
+						<tr>
+							<th>FIRST LINE</th>
+							<th>SECOND LINE</th>
+							<th>POSTCODE</th>
+							<th>SUBURB</th>
+							<th>STATE</th>
+							<th>COUNTRY</th>
+						</tr>
+						<tr>
+							<td>" . $pickup_first_line . "</td>
+							<td>" . $pickup_second_line . "</td>
+							<td>" . $pickup_postcode . "</td>
+							<td>" . $pickup_suburb . "</td>
+							<td>" . $pickup_state . "</td>
+							<td>" . $pickup_country . "</td>
+						</tr>
+					</table><p>";
+					echo "<br>";
+					
+				echo "<h2><u>Recipent</u></h2>";
+				echo "<table>
+					<tr>
+						<th>FIRST NAME</th>
+						<th>LAST NAME</th>
+					</tr>
+					<tr>
+						<td>" . $recipent_first_name . "</td>
+						<td>" . $recipent_last_name . "</td>
+					</tr>
+				</table><p>";
+				echo "<br>";
+				
+				echo "<h2><u>Dropoff Address</u></h2>";
+				echo "<table>
+					<tr>
+						<th>FIRST LINE</th>
+						<th>SECOND LINE</th>
+						<th>POSTCODE</th>
+						<th>SUBURB</th>
+						<th>STATE</th>
+						<th>COUNTRY</th>
+					</tr>
+					<tr>
+						<td>" . $dropoff_first_line . "</td>
+						<td>" . $dropoff_second_line . "</td>
+						<td>" . $dropoff_postcode . "</td>
+						<td>" . $dropoff_suburb . "</td>
+						<td>" . $dropoff_state . "</td>
+						<td>" . $dropoff_country . "</td>
+					</tr>
+				</table><p>";
+				echo "<br>";
+				
+				echo "<h2><u>Package</u></h2>";
+				echo "<table>
+							<tr>
+								<th>DESCRIPTION</th>
+								<th>LENGTH</th>
+								<th>WIDTH</th>
+								<th>HEIGHT</th>
+								<th>M^3</th>
+								<th>WEIGHT</th>
+								<th>COST</th>
+							</tr>
+							<tr>
+							<td>" . $package_description . "</td>
+							<td>" . $package_length . "</td>
+							<td>" . $package_width . "</td>
+							<td>" . $package_height . "</td>
+							<td>" . $package_m3 . "</td>
+							<td>" . $package_weight . "</td>
+							<td>$". $package_cost . "</td>
+							</tr>
+					</table><p>";
+				echo "<br>";
+								
+				?>
+				
+			<input type="submit" value="Confirm">
 
-			<p>
-				<label for="pickup_first_line">First Line</label>
-				<input type="text" name="pickup_first_line" value="<?php echo $_GET["pickup_first_line"]; ?>">
-			</p>
-			
-			<p>
-				<label for="pickup_second_line">Second Line</label>
-				<input type="text" name="pickup_second_line" value="<?php echo $_GET["pickup_second_line"]; ?>">
-			</p>
-			
-			<p>
-				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
-				<input type="text" name="pickup_postcode" value="<?php echo $_GET["pickup_postcode"]; ?>">
-			</p>
-			
-			<p>
-				<label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
-				<input type="text" name="pickup_suburb" value="<?php echo $_GET["pickup_suburb"]; ?>">
-			</p>
-			
-			<p>
-				<label for="pickup_state">State</label>  <!--- This should be a dropdown -->
-				<input type="text" name="pickup_state" value="<?php echo $_GET["pickup_state"]; ?>">
-			</p>
-			
-			<p>
-				<label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
-				<input type="text" name="pickup_country" value="<?php echo $_GET["pickup_country"]; ?>">
-			</p>
-			
-		<br>
-		
-			<p class="orderhead"><h2>Recipent Details</h2></p>
-			<p>
-				<label for="recipent_first_name">First Name</label>
-				<input type="text" name="recipent_first_name" value="<?php echo $_GET["recipent_first_name"]; ?>">
-			</p>
-			<p>
-				<label for="recipent_last_name">Last Name</label>
-				<input type="text" name="recipent_last_name" value="<?php echo $_GET["recipent_last_name"]; ?>">
-			</p>
-		
-		<br>
-		
-		<p class="orderhead"><h2>Drop-off Location</h2></p>
-		
-			<p>
-				<label for="dropoff_first_line">First Line</label>
-				<input type="text" name="dropoff_first_line" value="<?php echo $_GET["dropoff_first_line"]; ?>">
-			</p>
-			
-			<p>
-				<label for="dropoff_second_line">Second Line</label>
-				<input type="text" name="dropoff_second_line" value="<?php echo $_GET["dropoff_second_line"]; ?>">
-			</p>
-			
-			<p>
-				<label for="dropoff_postcode">Postcode</label> <!--- This should be a dropdown -->
-				<input type="text" name="dropoff_postcode" value="<?php echo $_GET["dropoff_postcode"]; ?>">
-			</p>
-			
-			<p>
-				<label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
-				<input type="text" name="dropoff_suburb" value="<?php echo $_GET["dropoff_suburb"]; ?>">
-			</p>
-			
-			<p>
-				<label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
-				<input type="text" name="dropoff_state" value="<?php echo $_GET["dropoff_state"]; ?>">
-			</p>
-			
-			<p>
-				<label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
-				<input type="text" name="dropoff_country" value="<?php echo $_GET["dropoff_country"]; ?>">
-			</p>
-		
-		<br>	
-		<p class="orderhead"><h2>Package Details</h2></p>
-			<p>
-				<label for="package_description">Description</label>
-				<input type="text" name="package_description" value="<?php echo $_GET["package_description"]; ?>">
-			</p>
-			<p>
-				<label for="package_length">Length</label>
-				<input type="text" name="package_length" value="<?php echo $_GET["package_length"]; ?>">
-			</p>
-			<p>
-				<label for="package_width">Width</label>
-				<input type="text" name="package_width" value="<?php echo $_GET["package_width"]; ?>">
-			</p>
-			<p>
-				<label for="package_height">Height</label>
-				<input type="text" name="package_height" value="<?php echo $_GET["package_height"]; ?>">
-			</p>
-			<p>
-				<label for="package_weight">Weight</label>
-				<input type="text" name="package_weight" value="<?php echo $_GET["package_weight"]; ?>">
-			</p>
-			<p>
-				<input type="submit" value="Calculate Cost">
-			</p>
-			<p>
-				<label for="cost_calculator">Cost</label>
-				<input type="text" name="cost_calculator" readonly>
-			</p>
-			
-		<p>
-			<input type="submit" value="Submit Order">
-		</p>
 		</fieldset>
 	</form>
 </div>

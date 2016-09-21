@@ -141,7 +141,7 @@
 				
 				mysqli_close($link);
 			?>
-			<input type="submit" value="Submit">
+			
 		</fieldset>
 	</form>
 
