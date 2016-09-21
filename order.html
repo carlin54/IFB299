@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Apply hooks to the on change text boxes for the fields--->
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -124,22 +126,22 @@
 				<label id="error_package_description"></label>
 			</p>
 			<p>
-				<label for="package_length">Length(cm)</label>
+				<label for="package_length">Length (cm)</label>
 				<input type="text" name="package_length">
 				<label id="error_package_length"></label>
 			</p>
 			<p>
-				<label for="package_width">Width(cm)</label>
+				<label for="package_width">Width (cm)</label>
 				<input type="text" name="package_width">
 				<label id="error_package_width"></label>
 			</p>
 			<p>
-				<label for="package_height">Height(cm)</label>
+				<label for="package_height">Height (cm)</label>
 				<input type="text" name="package_height">
 				<label id="error_package_height"></label>
 			</p>
 			<p>
-				<label for="package_weight">Weight(g)</label>
+				<label for="package_weight">Weight (g)</label>
 				<input type="text" name="package_weight">
 				<label id="error_package_weight"></label>
 			</p>
@@ -169,6 +171,7 @@ function isNumeric(n) {
 
 // address
 function validate_first_line(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -177,26 +180,28 @@ function validate_first_line(str, lbl){
 		lbl.innerHTML = '\tToo few characters entered (min : 5)!';
 		return false;
 	}
-	if(str.length > 32){
-		lbl.innerHTML = '\tToo many characters entered (max : 32)!';
+	if(str.length > 48){
+		lbl.innerHTML = '\tToo many characters entered (max : 48)!';
 		return false;
 	}
 	//regex
 	return true;
 }
 function validate_second_line(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length != 0 && str.length < 5){
 		lbl.innerHTML = '\tToo few characters entered (min : 5)!';
 		return false;
 	}
-	if(str.length != 0 && str.length > 32){
-		lbl.innerHTML = '\tToo many characters entered (max : 32)!';
+	if(str.length != 0 && str.length > 48){
+		lbl.innerHTML = '\tToo many characters entered (max : 48)!';
 		return false;
 	}
 	
 	return true;
 }
 function validate_postcode(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -209,13 +214,14 @@ function validate_postcode(str, lbl){
 		lbl.innerHTML = '\tThere are too few digits (require : 4)!';
 		return false;
 	}
-	if(isNumeric(str)){
+	if(!isNumeric(str)){
 		lbl.innerHTML = '\tThis is not a number!';
 		return false;
 	}
 	return true;
 }
 function validate_suburb(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -224,13 +230,14 @@ function validate_suburb(str, lbl){
 		lbl.innerHTML = '\tToo few charcters (min : 3)!';
 		return false;
 	}
-	if(str.length < 32){
+	if(str.length > 32){
 		lbl.innerHTML = '\tToo many charcters (max : 32)!';
 		return false;
 	}
 	return true;
 }
 function validate_state(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -246,12 +253,13 @@ function validate_state(str, lbl){
 	return true;
 }
 function validate_country(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
 	}
-	if(str.length < 24){
-		lbl.innerHTML = '\tToo many charcters (require : 3)!';
+	if(str.length > 24){
+		lbl.innerHTML = '\tToo many charcters (max : 24)!';
 		return false;
 	}
 	return true;
@@ -259,6 +267,7 @@ function validate_country(str, lbl){
 
 // name
 function validate_first_name(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -267,7 +276,7 @@ function validate_first_name(str, lbl){
 		lbl.innerHTML = '\tToo few characters (min : 2)!';
 		return false;
 	}
-	if(str.length > 2){
+	if(str.length > 16){
 		lbl.innerHTML = '\tToo many characters (max : 16)!';
 		return false;
 	}
@@ -275,6 +284,7 @@ function validate_first_name(str, lbl){
 	return true;
 }
 function validate_last_line(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
@@ -283,8 +293,8 @@ function validate_last_line(str, lbl){
 		lbl.innerHTML = '\tToo few characters (min : 2)!';
 		return false;
 	}
-	if(str.length > 2){
-		lbl.innerHTML = '\tToo many characters (max : 16)!';
+	if(str.length > 32){
+		lbl.innerHTML = '\tToo many characters (max : 32)!';
 		return false;
 	}
 	return true;
@@ -292,6 +302,7 @@ function validate_last_line(str, lbl){
 
 // package
 function validate_description(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length > 64){
 		lbl.innerHTML = '\tToo many characters (max : 64)!';
 		return false;
@@ -299,60 +310,80 @@ function validate_description(str, lbl){
 	return true;
 }
 function validate_length(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
 	}
-	if(isNumeric(str)){
+	if(!isNumeric(str)){
 		lbl.innerHTML = '\tThis is not a number!';
 		return false;
 	}
-	if(parseFloat(n) > 300){
-		lbl.innerHTML = 'This is too heavy (max : 300cm)!';
+	if(parseInt(str) < 1){
+		lbl.innerHTML = 'This is not long enough (min : 1cm)!';
+		return false;
+	}
+	if(parseInt(str) > 300){
+		lbl.innerHTML = 'This is too long (max : 300cm)!';
+		return false;
+	}
+	return false;
+}
+function validate_width(str, lbl){
+	lbl.innerHTML = '';
+	if(str.length == 0){
+		lbl.innerHTML = '\tPlease fill the field!';
+		return false;
+	}
+	if(!isNumeric(str)){
+		lbl.innerHTML = '\tThis is not a number!';
+		return false;
+	}
+	if(parseInt(str) < 1){
+		lbl.innerHTML = '\tThis is not wide enough (min : 1cm)!';
+		return false;
+	}
+	if(parseInt(str) > 250){
+		lbl.innerHTML = '\tThis is too wide (max : 250cm)!';
 		return false;
 	}
 	return true;
 }
 function validate_height(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
 	}
-	if(isNumeric(str)){
+	if(!isNumeric(str)){
 		lbl.innerHTML = '\tThis is not a number!';
 		return false;
 	}
-	if(parseFloat(n) > 150){
-		lbl.innerHTML = 'This is too heavy (max : 150cm)!';
+	if(parseInt(str) < 1){
+		lbl.innerHTML = 'This is too short (min : 1cm)!';
 		return false;
 	}
-	return true;
-}
-function validate_width(str, lbl){
-	if(str.length == 0){
-		lbl.innerHTML = '\tPlease fill the field!';
-		return false;
-	}
-	if(isNumeric(str)){
-		lbl.innerHTML = '\tThis is not a number!';
-		return false;
-	}
-	if(parseFloat(n) > 250){
-		lbl.innerHTML = 'This is too heavy (max : 250cm)!';
+	if(parseInt(str) > 150){
+		lbl.innerHTML = 'This is too tall (max : 150cm)!';
 		return false;
 	}
 	return true;
 }
 function validate_weight(str, lbl){
+	lbl.innerHTML = '';
 	if(str.length == 0){
 		lbl.innerHTML = '\tPlease fill the field!';
 		return false;
 	}
-	if(isNumeric(str)){
+	if(!isNumeric(str)){
 		lbl.innerHTML = '\tThis is not a number!';
 		return false;
 	}
-	if(parseFloat(n) > 150000){
+	if(parseInt(str) < 50){
+		lbl.innerHTML = 'This is short light (min : 100g)!';
+		return false;
+	}
+	if(parseInt(str) > 150000){
 		lbl.innerHTML = 'This is too heavy (max : 150000g)!';
 		return false;
 	}
@@ -399,10 +430,10 @@ function validate() {
 	var lbl_description = document.getElementById('error_package_description');
 	var str_length = document.getElementsByName('package_length')[0].value;
 	var lbl_length = document.getElementById('error_package_length');
-	var str_height = document.getElementsByName('package_height')[0].value;
-	var lbl_height = document.getElementById('error_package_height');
 	var str_width = document.getElementsByName('package_width')[0].value;
 	var lbl_width = document.getElementById('error_package_width');
+	var str_height = document.getElementsByName('package_height')[0].value;
+	var lbl_height = document.getElementById('error_package_height');
 	var str_weight = document.getElementsByName('package_weight')[0].value;
 	var lbl_weight = document.getElementById('error_package_weight');
 	
@@ -432,9 +463,9 @@ function validate() {
 
 	// package
 	&& 		validate_description	(str_description, 			lbl_description)
-	&& 		validate_length			(str_length, 				lbl_length)
+	&&		validate_length			(str_length, 				lbl_length)
+	&&		validate_width			(str_width, 				lbl_width)
 	&& 		validate_height			(str_height, 				lbl_height)
-	&& 		validate_width			(str_width, 				lbl_width)
 	&& 		validate_weight			(str_weight, 				lbl_weight)
 	&& 		false;
 	
