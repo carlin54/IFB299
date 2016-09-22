@@ -8,7 +8,7 @@
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
 	
-	<link rel="stylesheet">  <!-- href="bill.css" -->
+	<link rel="stylesheet" href="bill.css">
 </head>
 
 <body>
@@ -33,12 +33,22 @@
 			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
+	
 
+	<input type="terms and conditions" value="terms and conditions">
+	<p> 
+	You are authorized to use this tracking system solely to track 
+	shipments tendered via Bill website by, for, or to you. 
+	No other use may be made of the tracking system and information without authorise written consent.
+	</p>
+	<input type="Tracking FAQs" value="Tracking FAQs">
+<P>  Needs any help regrading tracking or if unable to track your package please fell the 
+contact us form and mention your problem in comment section 
+</p>
 
 </html>
 
 <script type="text/javascript">
-
 function validate_package_id(){
 	var package_id = document.getElementsByName('package_id')[0].value;
 	
@@ -49,7 +59,6 @@ function validate_package_id(){
 	
 	return true;
 }
-
 function validate() {
 	return validate_package_id();
 }
