@@ -70,3 +70,21 @@ body{
 .tabbed > input:not(:checked) + section > div{
   display : none;
 }
+input[type="text"],input[id="package_id"]{
+  height: 45px;
+  width: 300px;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+input[type="submit"],input[value="Submit"] {
+ height: 45px;
+  width: 300px;
+  font-size: 18px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: green;
+}
