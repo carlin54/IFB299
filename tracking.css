@@ -1,61 +1,67 @@
 body{
+	
 	background-image: url("terms.jpg"); 
 	background-size: 100% 1000px;
 	background-repeat: no-repeat;
 }
-.tabs {
-    width:100%;
-    display:inline-block;
-}
- 
-    /*----- Tab Links -----*/
-    /* Clearfix */
-    .tab-links:after {
-        display:block;
-        clear:both;
-        content:'';
-    }
- 
-    .tab-links li {
-        margin:0px 5px;
-        float:left;
-        list-style:none;
-    }
- 
-        .tab-links a {
-            padding:9px 15px;
-            display:inline-block;
-            border-radius:3px 3px 0px 0px;
-            background:#7FB5DA;
-            font-size:16px;
-            font-weight:600;
-            color:#4c4c4c;
-            transition:all linear 0.15s;
-        }
- 
-        .tab-links a:hover {
-            background:#a7cce5;
-            text-decoration:none;
-        }
- 
-    li.active a, li.active a:hover {
-        background:#fff;
-        color:#4c4c4c;
-    }
- 
-    /*----- Content of Tabs -----*/
-    .tab-content {
-        padding:15px;
-        border-radius:3px;
-        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-        background:#fff;
-    }
- 
-        .tab {
-            display:none;
-        }
- 
-        .tab.active {
-            display:block;
-        
 
+.tabbed{
+  float : left;
+  width : 100%;
+}
+
+.tabbed > input{
+  display : none;
+}
+
+.tabbed > section > h1{
+  float       : left;
+  box-sizing  : border-box;
+  margin      : 0;
+  padding     : 0.5em 0.5em 0;
+  overflow    : hidden;
+  font-size   : 1em;
+  font-weight : normal;
+}
+
+.tabbed > input:first-child + section > h1{
+  padding-left : 1em;
+}
+
+.tabbed > section > h1 > label{
+  display                 : block;
+  padding                 : 0.25em 0.75em;
+  border                  : 1px solid #ddd;
+  border-bottom           : none;
+  border-top-left-radius  : 4px;
+  border-top-right-radius : 4px;
+  box-shadow              : 0 0 0.5em rgba(0,0,0,0.0625);
+  background              : #fff;
+  cursor                  : pointer;
+     -moz-user-select     : none;
+      -ms-user-select     : none;
+  -webkit-user-select     : none;
+}
+
+.tabbed > section > div{
+  position      : relative;
+  z-index       : 1;
+  float         : right;
+  box-sizing    : border-box;
+  width         : 100%;
+  margin        : 2.5em 0 0 -100%;
+  padding       : 0.5em 0.75em;
+  border        : 1px solid #ddd;
+  border-radius : 4px;
+  box-shadow    : 0 0 0.5em rgba(0,0,0,0.0625);
+  background    : #fff;
+}
+
+.tabbed > input:checked + section > h1{
+  position : relative;
+  z-index  : 2;
+}
+
+.tabbed > input:not(:checked) + section > div{
+  display : none;
+}
