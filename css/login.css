@@ -1,17 +1,57 @@
 body{
+  font-family: arial,sans-serif;
+}
+
+body{
   margin: 0 auto;;
   background-image: url("../img/loginbackground.jpg");
   background-repeat: no-repeat;
   background-size: 100% 1000px;
 }
+/*#nav {
+  width: 700px;
+  height: 200px;
+  background: #ccc;
+}*/
+#nav_wrapper{
+  height: 100px;
+  width: 900px;
+  background: #377D7A;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  /*opacity: 0.8;
+  filter:alpha (opacity=80);*/
+  background-color: rgba(45, 64, 82, 0.7);
+  border-radius: 5px;
+}
+#nav_wrapper ul li{
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  padding: 15px;
+}
+#nav_wrapper a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+#nav_wrapper ul li:hover{
+  background: red;
+  transition: all 0.45s;
+  border-radius: 4px;
+  background-color: rgba(27, 39, 49, 0.7);
+  /*opacity: 0.9;
+  filter:alpha (opacity=90);*/
+}
 .container{
   width: 500px;
   height: 380px;
   text-align: center;
-  background-color: rgba(52, 73, 94, 0.7);;
+  background-color: rgba(52, 73, 94, 0.7);
   border-radius: 4px;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 .container img{
   width: 120px;
