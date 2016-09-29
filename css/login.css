@@ -46,7 +46,7 @@ body{
 }
 .container{
   width: 500px;
-  height: 380px;
+  height: 400px;
   text-align: center;
   background-color: rgba(52, 73, 94, 0.7);
   border-radius: 4px;
@@ -66,6 +66,7 @@ input[type="text"],input[type="password"]{
   font-size: 18px;
   border: none;
   margin-bottom: 20px;
+  margin-left: 100px;
   border-radius: 4px;
   background-color: #fff;
 }
@@ -75,6 +76,7 @@ input[type="text"],input[type="password"]{
   color: #fff;
   border-radius: 4px;
   border: none;
+  margin-left: 100px;
   background-color: #2ECC71;
   border-bottom: 4px solid #27AE60;
   margin-bottom: 20px;
