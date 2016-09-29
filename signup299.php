@@ -6,22 +6,13 @@
 		$password = "";
 		$dbname = "ifb299";
 		
-		$dbhandle = mysql_connect($servername, $username, $password) or die("Could not connect to database");
-        $selecttable = mysql_select_db($dbname, $dbhandle);
-		
-		//$link = mysqli_connect($servername, $username, $password, $dbname);
-		//if (!$link) {
-		//			echo "<p>Error: Unable to connect to MySQL." . PHP_EOL . "</p>";
-		//			echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
-		//			echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
-		//			exit;
-		//		}
-
-       //$dbhandle = mysql_connect($hostname, $username, $password) or die("Could not connect to database");
-       //$selecttable = mysql_select_db($database, $dbhandle);
-		
-		
-		
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		// Check connection
+		if (!$conn) {
+		    die("Connection failed: " . mysqli_connect_error());
+		}
+					
 		
      ?>
 
@@ -42,30 +33,36 @@
 			$CUSTOMER_PASSWORD = $_POST['CUSTOMER_PASSWORD'];
 			$CUSTOMER_PASSWORD1 = $_POST['CUSTOMER_PASSWORD1'];
 			$CUSTOMER_MOBILE = $_POST['CUSTOMER_MOBILE'];
-		
-			$query = mysql_query("SELECT * FROM `customers` WHERE CUSTOMER_ID='$CUSTOMER_ID'");
+			$CUSTOMER_HOMEPHONE = $_POST['CUSTOMER_HOMEPHONE'];
 			
-			if(mysql_num_rows($query) > 0)
-			{
-				echo '<p class="unsuccessful">CUSTOMER_ID already taken. Please try again.</p>';
+			if ($CUSTOMER_PASSWORD != $CUSTOMER_PASSWORD1) {
+				echo '<p class="unsuccessful">Passwords did not match please try again!</p>';
 				$validUser = 0;
 			}
-			else if ($CUSTOMER_PASSWORD != $CUSTOMER_PASSWORD1) {
-				echo '<p class="unsuccessful">Passwords did not match please try again!</p>';
+			
+			$sql = "SELECT * FROM customers WHERE CUSTOMER_USERNAME ='$CUSTOMER_USERNAME'";
+			$result = mysqli_query($conn, $sql);
+
+			if(mysqli_num_rows($result) > 0)
+			{
+				echo '<p class="unsuccessful">CUSTOMER_ID already taken. Please try again.</p>';
 				$validUser = 0;
 			}
 			else
 			{
 				$validUser = 1;
-				$PASSWORD = password_hash($CUSTOMER_PASSWORD, PASSWORD_DEFAULT);
-				mysql_query("INSERT INTO `customers`(`CUSTOMER_ID`, `CUSTOMER_FIRST_NAME`, `CUSTOMER_LAST_NAME`, `CUSTOMER_USERNAME`, `CUSTOMER_PASSWORD`, `CUSTOMER_PASSWORD1`, `CUSTOMER_MOBILE`) VALUES ('$CUSTOMER_ID', '$CUSTOMER_FIRST_NAME', '$CUSTOMER_LAST_NAME', '$CUSTOMER_USERNAME','$CUSTOMER_PASSWORD`, `$CUSTOMER_PASSWORD1`, `$CUSTOMER_MOBILE')"); 
-				
-					           								
+				// $CUSTOMER_PASSWORD = password_hash($CUSTOMER_PASSWORD, PASSWORD_DEFAULT);
+	 			
+	 			//$sql = "INSERT INTO customers(CUSTOMER_ID, CUSTOMER_FIRST_NAME, CUSTOMER_LAST_NAME, CUSTOMER_USERNAME, CUSTOMER_PASSWORD, CUSTOMER_PASSWORD1, CUSTOMER_MOBILE) VALUES ('$CUSTOMER_ID', '$CUSTOMER_FIRST_NAME', '$CUSTOMER_LAST_NAME', '$CUSTOMER_USERNAME','$CUSTOMER_PASSWORD`, `$CUSTOMER_PASSWORD1`, `$CUSTOMER_MOBILE')";
+	 			$sql = "INSERT INTO customers(CUSTOMER_FIRST_NAME, CUSTOMER_LAST_NAME, CUSTOMER_USERNAME, CUSTOMER_PASSWORD, CUSTOMER_MOBILE, CUSTOMER_HOMEPHONE) VALUES ('$CUSTOMER_FIRST_NAME','$CUSTOMER_LAST_NAME', '$CUSTOMER_USERNAME', '$CUSTOMER_PASSWORD', '$CUSTOMER_MOBILE', '$CUSTOMER_HOMEPHONE')";
+
+				$result = mysqli_query($conn, $sql);
 			}
 		}
-		mysql_close();
+
+		mysqli_close($conn);
 		
-?> 
+     ?>
 
 	<form action="signup299.php" method="POST" autocomplete="off">
 		<table>
@@ -75,9 +72,10 @@
 		<tr>		
 		<td>Last Name:</td><td><input type="text" name="CUSTOMER_LAST_NAME" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_LAST_NAME.'"'; }?> required/></td>
 		</tr>
-		<tr>
-		<td>ID:</td><td><input type="text" name="CUSTOMER_ID" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_LAST_NAME.'"'; }?> required/></td>
+		<tr>		
+		<td>User Name:</td><td><input type="text" name="CUSTOMER_USERNAME" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_USERNAME.'"'; }?> required/></td>
 		</tr>
+
 		<tr>
 		<td>Password:</td><td><input type="password" name="CUSTOMER_PASSWORD" required /></td>
 		</tr>
@@ -85,9 +83,12 @@
 		<td>Repeat Password:</td><td><input type="password" name="CUSTOMER_PASSWORD1" required /></td>
 		</tr>
 		<tr>
-		<td>Phone Number:</td><td><input type="text" name="phone" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_MOBILE.'"'; }?> required/></td>
+		<td>Phone Number:</td><td><input type="text" name="CUSTOMER_MOBILE" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_MOBILE.'"'; }?> required/></td>
 		</tr>
 		<tr>
+		<td>Phone Number:</td><td><input type="text" name="CUSTOMER_HOMEPHONE" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_HOMEPHONE.'"'; }?> required/></td>
+		</tr>
+		<tr>		
 		
 		<td></td><td><input type="submit" value="Submit" name="Submit" /></td>
 	</tr>
