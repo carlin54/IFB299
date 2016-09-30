@@ -2,23 +2,23 @@
     session_start();
 
     //connect to database
-    $db = mysqli_connect("localhost","root","","authentication");
+    $db = mysqli_connect("localhost","root","","IFB299");
 
     if (isset($_POST['login_btn'])) {
 
-      $username = mysql_real_escape_string($_POST['username']);
-      $password = mysql_real_escape_string($_POST['password']);
+      $CUSTOMER_USERNAME = mysql_real_escape_string($_POST['CUSTOMER_USERNAME']);
+      $CUSTOMER_PASSWORD = mysql_real_escape_string($_POST['CUSTOMER_PASSWORD']);
 
-      $password = $password;
-      $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+      $CUSTOMER_PASSWORD = $CUSTOMER_PASSWORD;
+      $sql = "SELECT * FROM customers  WHERE CUSTOMER_USERNAME = '$CUSTOMER_USERNAME' AND CUSTOMER_PASSWORD = '$CUSTOMER_PASSWORD'";
       $result = mysqli_query($db,$sql);
 
       if (mysqli_num_rows($result) == 1 ) {
         $_SESSION['message'] = "You are now logged in";
-        $_SESSION['username'] = $username;
+        $_SESSION['CUSTOMER_USERNAME'] = $CUSTOMER_USERNAME;
         header("location: loginhome.php");
       }else {
-        $_SESSION['message'] = "Username/password combination incorrect";
+        $_SESSION['message'] = "CUSTOMER_USERNAME/CUSTOMER_PASSWORD combination incorrect";
       }
     }
 ?>
@@ -39,7 +39,7 @@
               <li><a href="tracking.html">Tracking</a></li>
               <li><a href="contact & locations.html">Contact & Locations</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="Login.html">Login</a></li>
+              <li><a href="login.php">Login</a></li>
               <li><a href="help.html">Help</a></li>
           </ul>
         </div>
@@ -56,11 +56,11 @@
                <table>
                     <tr>
 
-                      <td><input type="text" name="username" placeholder="Enter Username" class="textInput"></td>
+                      <td><input type="text" name="CUSTOMER_USERNAME" placeholder="Enter Username" class="textInput"></td>
                     </tr>
                     <tr>
 
-                      <td><input type="password" name="password" placeholder="Enter Password" class="textInput"></td>
+                      <td><input type="password" name="CUSTOMER_PASSWORD" placeholder="Enter Password" class="textInput"></td>
                     </tr>
                     <tr>
 
