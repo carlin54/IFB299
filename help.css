@@ -1,4 +1,9 @@
-
+body
+{
+	background-image: url("Help.jpg"); 
+	background-size: 100% 1000px;
+	background-repeat: no-repeat;
+}
 h2
 {
 background-color: #FEFFED;
