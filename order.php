@@ -38,8 +38,35 @@
 					echo "<p>Success: Connect to MySQL.</p>";
 				}
 				
-				$sender_first_name = strtoupper("TO IMPLEMENT");
-				$sender_last_name = strtoupper("TO IMPLEMENT");
+				$_SESSION["username"] = "Carlin54";
+				
+				$user_query = "
+					SELECT 
+					customers.CUSTOMER_ID,
+					customers.CUSTOMER_FIRST_NAME,
+					customers.CUSTOMER_LAST_NAME
+					FROM customers
+					WHERE customers.CUSTOMER_USERNAME = \"" . $_SESSION["username"] . "\";";
+				
+				$user_result = $link->query($user_query);
+				
+				$sender_id = NULL;
+				$sender_first_name = NULL;
+				$sender_last_name = NULL;
+				if ($user_result->num_rows == 0){
+					echo "<p>Sorry, username " . $_SESSION["username"] . " is not found.</p>";
+					exit;
+				}else if($user_result->num_rows == 1){
+					$row = $user_result->fetch_assoc();
+					$_SESSION['sender_id'] = $sender_id = $row['CUSTOMER_ID'];
+					$_SESSION['sender_first_name'] = $sender_first_name = $row['CUSTOMER_FIRST_NAME'];
+					$_SESSION['sender_last_name'] = $sender_last_name = $row['CUSTOMER_LAST_NAME'];
+					
+				}else{
+					echo "<p>Sorry, " . $_SESSION["username"] . " there is a database error.</p>";
+					exit;					
+				}
+				$user_result->close();
 				
 				$_SESSION['pickup_first_line'] = $pickup_first_line = strtoupper($_GET['pickup_first_line']);
 				$_SESSION['pickup_second_line'] = $pickup_second_line = strtoupper($_GET['pickup_second_line']);
@@ -79,8 +106,11 @@
 					$package_m3_scalar = $row['SIZE_SCALER'];
 					$package_weight_scalar = $row['WEIGHT_SCALER'];
 				}
+				$cost_result->close();
 				
 				$package_cost = $package_m3 * $package_m3_scalar + $package_weight * $package_weight_scalar;
+				
+				
 				
 				echo "<h2><u>Sender</u></h2>";
 				echo "<table>
