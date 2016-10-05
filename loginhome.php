@@ -12,7 +12,12 @@
 <div class="header">
     <h1>On the Spot - Your Package Delivery Needs!</h1>
 </div>
-<div><h1>Welcome <?php echo $_SESSION['CUSTOMER_USERNAME']; ?></h1></div>
+<div>
+  <h1>
+    Welcome Customer<br>
+    <?php echo $_SESSION['CUSTOMER_USERNAME']; ?>
+  </h1>
+</div>
 
 
 </body>
