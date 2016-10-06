@@ -19,6 +19,9 @@
   </h1>
 </div>
 
+<div>
+    <a href="customerlogout.php">Lougout</a>
+</div>
 
 </body>
 </html>
