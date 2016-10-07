@@ -78,7 +78,7 @@
 <html>
 <head>
     <title>On the Spot - Your Package Delivery Needs!</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/register.css"></link>
 </head>
 <body>
   <div id="nav"><br>
@@ -98,7 +98,7 @@
 </body>
 <body>
     <div class="container">
-      <img src="img/loginmen.png">
+      <img src="img/register.png">
           <h1>New Customer Signup</h1>
 
           <form action="signup299.php" method="POST" autocomplete="off">
@@ -129,6 +129,7 @@
           </form>
           <p>*Please complete this form to signup for a new account. All fields must be
         	completed.</p>
+	  Already't have an account? <a href = "login.php" tite = "login">Login now!
     </div>
 </body>
 </html>
