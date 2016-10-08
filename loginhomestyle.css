@@ -1,15 +1,67 @@
 body{
   padding: 0px;
   margin: 0px;
+  font-family: arial,sans-serif;
+  text-align: center;
+}
+
+body{
+  margin: 0 auto;;
+  background-image: url("img/loginbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 1000px;
+  background-attachment:fixed;
+}
+
+#nav_wrapper{
+  height: 100px;
+  width: 1030px;
+  background: #377D7A;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  /*opacity: 0.8;
+  filter:alpha (opacity=80);*/
+  background-color: rgba(45, 64, 82, 0.7);
+  border-radius: 5px;
+}
+#nav_wrapper ul li{
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  padding: 15px;
+}
+#nav_wrapper a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+#nav_wrapper ul li:hover{
+  background: red;
+  transition: all 0.45s;
+  border-radius: 4px;
+  background-color: rgba(27, 39, 49, 0.7);
+  /*opacity: 0.9;
+  filter:alpha (opacity=90);*/
+}
+.container{
+  width: 750px;
+  height: 500px;
+  text-align: left;
+  background-color: rgba(52, 73, 94, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .header{
-  background-color: #1A3333;
+  background-color: #364d62;
   color: white;
   text-align: center;
   top: 0px;
-  width: 100%;
+  width: 1910px;
   padding: 5px;
+  position: fixed;
 }
 form{
   width: 40%;
@@ -25,7 +77,7 @@ form{
   padding: 1px;
   width: 100%;
 }
-#error_msg{
+/*#error_msg{
   width: 50%;
   margin: 5px auto;
   height: 30px;
@@ -34,7 +86,7 @@ form{
   color: #FF0000;
   text-align: center;
   padding-top: 10px;
-}
+}*/
 td {
   text-align: right;
 }
