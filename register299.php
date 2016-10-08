@@ -127,9 +127,9 @@
 
             </table>
           </form>
-          <p>*Please complete this form to signup for a new account. All fields must be
-        	completed.</p>
-	  Already't have an account? <a href = "login.php" tite = "login">Login now!
-    </div>
+					<p>*Please complete this form to signup for a new account. All fields must be
+						completed.</p>
+						Already have an account? <a href = "login.php" tite = "login">Login now!
+						</div>
 </body>
 </html>
