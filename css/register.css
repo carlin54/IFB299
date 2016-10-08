@@ -4,7 +4,7 @@ body{
 
 body{
   margin: 0 auto;;
-  background-image: url("../img/loginbackground.jpg");
+  background-image: url("../img/registerbackground.jpg");
   background-repeat: no-repeat;
   background-size: 100% 1000px;
   background-attachment: fixed;
@@ -47,12 +47,12 @@ body{
 }
 .container{
   width: 600px;
-  height: 750px;
+  height: 800px;
   text-align: center;
   background-color: rgba(52, 73, 94, 0.7);
   border-radius: 4px;
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 140px;
 }
 .container img{
   width: 120px;
