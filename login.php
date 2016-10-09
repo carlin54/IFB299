@@ -22,8 +22,6 @@
       }
     }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,38 +37,31 @@
               <li><a href="tracking.html">Tracking</a></li>
               <li><a href="contact & locations.html">Contact & Locations</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="login.php">Login</a></li>
               <li><a href="help.html">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
           </ul>
         </div>
     </div>
 </body>
-
 <body>
     <div class="container">
-      <img src="img/loginmen.jpg">
-          <h1>Welcome</h1>
+      <img src="img/loginmen.png">
+          <h1>Welcome Customer</h1>
              <form action="login.php" method="post">
-
-
                <table>
                     <tr>
-
                       <td><input type="text" name="CUSTOMER_USERNAME" placeholder="Enter Username" class="textInput"></td>
                     </tr>
                     <tr>
-
                       <td><input type="password" name="CUSTOMER_PASSWORD" placeholder="Enter Password" class="textInput"></td>
                     </tr>
                     <tr>
-
                       <td><input type="submit" name="login_btn" value="LOGIN" class="btn-login"></td>
                     </tr>
                 </table>
-
-
              </form>
-             Don't have an account? <a href = "register.html" tite = "register">Register now!
+             Don't have an account? <a href = "register299.php" tite = "register">Register now!
     </div>
 </body>
 </html>
