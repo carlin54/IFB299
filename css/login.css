@@ -7,6 +7,7 @@ body{
   background-image: url("../img/loginbackground.jpg");
   background-repeat: no-repeat;
   background-size: 100% 1000px;
+  background-attachment: fixed;
 }
 /*#nav {
   width: 700px;
@@ -15,7 +16,7 @@ body{
 }*/
 #nav_wrapper{
   height: 100px;
-  width: 1020px;
+  width: 900px;
   background: #377D7A;
   margin-left: auto;
   margin-right: auto;
@@ -60,6 +61,39 @@ body{
   margin-bottom: : 30px;
   border-radius: 4px;
 }
+.box{
+  width: 800px;
+  height: 2080px;
+  text-align: center;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.box img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.boxhome{
+  width: 600px;
+  height: 550px;
+  text-align: left;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.box1{
+  width: 600px;
+  height: 900px;
+  text-align: left;
+  background-color: rgba(52, 73, 94, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
 input[type="text"],input[type="password"]{
   height: 45px;
   width: 300px;
@@ -82,5 +116,19 @@ input[type="text"],input[type="password"]{
   margin-bottom: 20px;
 }
 p{
-  color: #fff;
+  color: #000000;
+  text-align: center;
+}
+h4{
+  text-align: center;
+  font-weight: bold;
+}
+.header{
+  background-color: #364d62;
+  color: white;
+  text-align: center;
+  top: 0px;
+  width: 1910px;
+  padding: 5px;
+  position: fixed;
 }
