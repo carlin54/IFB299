@@ -15,9 +15,13 @@ ALTER TABLE `Orders`
 ALTER TABLE `Website Administrators` 
 	DROP FOREIGN KEY `Website_Administrators_fk_EMPLOYEE_ID`;
 ALTER TABLE `Customers Pickup Addresses` 
-	DROP FOREIGN KEY `Customers_Pickup_Addresses_ADDRESS_ID`;
+	DROP FOREIGN KEY `Customers_Pickup_Addresses_fk_ADDRESS_ID`;
 ALTER TABLE `Customers Pickup Addresses` 
 	DROP FOREIGN KEY `Customers_Pickup_Addresses_fk_CUSTOMER_ID`;
+ALTER TABLE `Customers Dropoff Addresses` 
+	DROP FOREIGN KEY `Customers_Dropoff_Addresses_fk_ADDRESS_ID`;
+ALTER TABLE `Customers Dropoff Addresses` 
+	DROP FOREIGN KEY `Customers_Dropoff_Addresses_fk_CUSTOMER_ID`;
 ALTER TABLE `Addresses` 
 	DROP FOREIGN KEY `Addresses_fk_ADDRESS_POSTCODE`;
 	
