@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
-	
-	<link rel="stylesheet" type="text/css" href="home.css"></link>
+  <link rel="stylesheet" type="text/css" href="css/login.css"></link>
+	<style>
+p {
+	  font-weight: bold;
+    font-size: 250%;
+}
+</style>
 </head>
 
 <body>
+  <div id="nav"><br>
+      <div id="nav_wrapper"><br>
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="order.html">Order</a></li>
+              <li><a href="tracking.html">Tracking</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
+          </ul>
+        </div>
+    </div>
+</body>
+
+<!---<body>
 <ul class="navi">
 	<li class="navi"><a class="active" href="home.html">Home</a></li>
 	<li class="navi"><a href="order.html">Order</a></li>
 	<li class="navi"><a href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
+	<li class="navi"><a href="contact & about.html">Contact & About</a></li>
 	<li class="navi"><a href="help.html">Help</a></li>
 	<li class="navi"><a href="login.php">Login</a></li>
 	<li class="navi"><a href="loginstaff.php">Staff Login</a></li>
 </ul>
    <div class="orderhead">
 
-	<h1 class="orderhead">Bill's Package Delivery</h1>
-	<h2 class="orderhead">Check our rate</h2>
+	<h1 class="orderhead">Bill's Package Delivery</h1>--->
+<p>Bill's Package Delivery</p>
+
+	<!---<h2 class="orderhead">Check our rate</h2>
 		<p>
 			<label for="pickuppostcode"> Pick up Post Code</label>
 			<input type="text" id="pickuppost" name="pickuppostcode" style="width:75px;">
@@ -30,35 +50,48 @@
 		<p>
 			<label for="pickuppostcode">Drop off Post Code</label>
 			<input type="text" id="pickuppost" name="pickuppostcode" style="width:75px;">
-		</p>
-		<h3 class="Dimensions">Dimensions</h3>
-		
+		</p>--->
 
-		<p>
-			<label for="size">Height</label>
-			<input type="text" id="size" name="size" style="width:50px;">
-		</p>
-		<div
-			<div class="size">length
-			<input type="text" id="size" name="size" style="width:50px;">
-		</div>
-		<p>
-			<label for="size">width</label>
-			<input type="text" id="size" name="size" style="width:50px;">
-		</p>
-		<p>
-			<label for="weight">Weight</label>
-			<input type="text" id="weight" name="weight" style="width:75px;">
-		</p>
-		<p>
-			<input type="submit" value="Calculate Cost">
-		</p>
-		<div
-			<label class="calcost">Cost</label>
-			<input type="text" id="calccost" name="calccost" style="width:75px" readonly>
-		</div>
-		 </div>
-		 
+
+		<body>
+		    <div class="boxhome">
+					<h4>Dimensions</h4>
+					<h3>
+						<label>Height</label>
+						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
+					</h3>
+					<h3>
+						<label>Length</label>
+						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
+					</h3>
+					<h3>
+						<label>Width </label>
+						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
+					</h3>
+					<h3>
+						<label>Weight </label>
+						<input type="text" id="size" name="size" style="width:100px;">  KG</input>
+					</h3>
+					<table>
+						<tr>
+							<td><input type="submit" name="login_btn" value="Calculate Cost" class="btn-login"></td>
+						</tr>
+					</table>
+					<h3>
+						<label>Cost </label>
+						<input type="text" id="calccost" name="calccost" style="width:75px" readonly>
+					</h3>
+
+
+
+
+		    </div>
+		</body>
+		<div class="header">
+	      <h1>On the Spot - Your Package Delivery Needs!</h1>
+	  </div>
+</html>
+
 		 <div>
 		<p align="right">
 		<b>Opening hours</b><br>
@@ -76,5 +109,3 @@
 		The Markets, West End QLD 4101<br>
 		Brisbane Rd, Booval QLD 4304<br></p>
 		</div>
-		
-		
