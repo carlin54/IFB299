@@ -77,7 +77,7 @@ body{
 }
 .boxhome{
   width: 600px;
-  height: 550px;
+  height: 580px;
   text-align: left;
   background-color: rgba(246,246,246, 0.7);
   border-radius: 4px;
@@ -115,6 +115,17 @@ input[type="text"],input[type="password"]{
   border-bottom: 4px solid #27AE60;
   margin-bottom: 20px;
 }
+.btn-home{
+  padding: 15px 30px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  margin-left: 228px;
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+  margin-bottom: 20px;
+}
 p{
   color: #000000;
   text-align: center;
@@ -123,12 +134,25 @@ h4{
   text-align: center;
   font-weight: bold;
 }
+h2{
+  text-align: center;
+}
 .header{
   background-color: #364d62;
   color: white;
   text-align: center;
   top: 0px;
   width: 1910px;
+  padding: 5px;
+  position: fixed;
+}
+.bottomhome{
+  background-color: rgba(45, 64, 82, 0.7);;
+  color: white;
+  text-align: center;
+  top: 846px;/*878*/
+  width: 1910px;
+  height: 115px;
   padding: 5px;
   position: fixed;
 }
