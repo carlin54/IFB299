@@ -40,7 +40,7 @@
 				
 					if ($address_result->num_rows == 0){
 						$insert_address = "
-						INSERT INTO address 
+						INSERT INTO `addresses` 
 						( 	ADDRESS_FIRST_LINE,
 							ADDRESS_SECOND_LINE,
 							ADDRESS_POSTCODE,
@@ -58,49 +58,41 @@
 						)
 						";
 						
-						if($link->query($insert_address) === TRUE){
+						
+						if ($link->query($insert_address) === TRUE){
 							$address_result->close();
 							$address_result = $link->query($address_query);
 							$row = $address_result->fetch_assoc();
 							$address_result->close();
 							return $row['ADDRESS_ID'];
 						}else{
-							return NULL;
+							echo "<p>Error: " . $insert_address . "<br>" . $link->error . "</p>";
 						}
-						
+												
 					}else if($address_result->num_rows == 1){
 						$row = $address_result->fetch_assoc();
 						$address_result->close();
 						return $row['ADDRESS_ID'];
-					}else{
-						return NULL;				
 					}
 					
 					$address_result->close();
-					
 					return NULL;
 
 				}
 				function add_recipent($link, $first_name, $last_name){
 					
-					$insert_recipent = "
-						RECIPENT_ID
-						RECIPENT_FIRST_NAME
-						RECIPENT_LAST_NAME
-					";
-					/////////////////////////////////////////////////////////
 					$recipent_query = "
 					SELECT recipents.RECIPENT_ID 
 					FROM `recipents`
 					WHERE 
-					recipents.ADDRESS_FIRST_LINE = 	'" . $first_line 	. "' AND 
-					recipents.ADDRESS_SECOND_LINE = '" . $second_line 	. "'";
+					recipents.RECIPENT_FIRST_NAME = '" . $first_name . "' AND 
+					recipents.RECIPENT_LAST_NAME = '" . $last_name 	. "'";
 					
 					$recipent_result = $link->query($recipent_query);
 				
 					if ($recipent_result->num_rows == 0){
 						$insert_recipent = "
-						INSERT INTO address 
+						INSERT INTO `recipents`
 						( 	RECIPENT_FIRST_NAME,
 							RECIPENT_LAST_NAME
 						)
@@ -110,33 +102,36 @@
 						)
 						";
 						
-						if($link->query($insert_recipent) === TRUE){
+						if ($link->query($insert_recipent) === TRUE){
 							$recipent_result->close();
 							$recipent_result = $link->query($recipent_query);
 							$row = $recipent_result->fetch_assoc();
 							$recipent_result->close();
 							return $row['RECIPENT_ID'];
 						}else{
-							return NULL;
+							echo "<p>Error: " . $insert_recipent . "<br>" . $link->error . "</p>";
 						}
 						
 					}else if($recipent_result->num_rows == 1){
 						$row = $recipent_result->fetch_assoc();
 						$recipent_result->close();
 						return $row['RECIPENT_ID'];
-					}else{
-						return NULL;				
 					}
 					
 					$recipent_result->close();
-					
 					return NULL;
-					/////////////////////////////////////////////////////////
 				}
 									
-				
+				function get_status(){
+					return 0;
+				}
 				
 				session_start();
+				
+				if (!isset($_SESSION['CUSTOMER_USERNAME'])){
+					header('Location: http://localhost/login.php') ;
+				}
+
 				
 				$servername = "localhost";
 				$username = "root";
@@ -184,11 +179,12 @@
 				$package_height = $_SESSION['package_height'];
 				$package_weight = $_SESSION['package_weight'];
 				$package_m3 = $_SESSION['package_m3'];
-				
+				$package_cost = $_SESSION['package_cost'];
 				$date_of_order = date("Y-m-d");
-								
+				$status_id = get_status();
+				
 				$insert_order = "
-				INSERT INTO orders 
+				INSERT INTO `orders` 
 				( 	RECIPENT_ID,
 					SIZE,
 					WEIGHT,
@@ -208,20 +204,26 @@
 					'" . $recipent_id 			. "',
 					'" . $package_m3 			. "',
 					'" . $package_weight		. "',
-					'" . NULL 					. "',
-					'" . NULL 					. "',
+					'',
+					'',
 					'" . $date_of_order 		. "',
-					'" . $cost 					. "',
+					'',
+					'',
+					'" . $package_cost 			. "',
 					'" . $sender_id				. "',
 					'" . $package_description 	. "',
-					'" . $status_id 			. "',
+					'" . $status_id			 	. "',
 					'" . $pickup_address_id 	. "',
 					'" . $dropoff_address_id 	. "'
 				)
-				"
-				?>
-				<input type="submit">
-			<input type="submit" value="Confirm">
+				";
+				
+				if (!$link->query($insert_order) === TRUE){
+					echo "<p>Error: " . $insert_order . "<br>" . $link->error . "</p>";
+				}
+				
+				$link->close();
+			?>
 
 		</fieldset>
 	</form>
