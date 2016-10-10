@@ -4,11 +4,17 @@
 	<title>On the Spot - Your Package Delivery Needs!</title>
   <link rel="stylesheet" type="text/css" href="css/login.css"></link>
 	<style>
-p {
-	  font-weight: bold;
-    font-size: 250%;
-}
-</style>
+	h4 {
+		font-weight: bold;
+		font-size: 180%;
+	}
+	p {
+		font-weight: bold;
+		font-size: 200%;
+	}
+	.left{float: left; width: 600px;  margin-right:-3px;}
+  .right{ float:right; width:600px; margin-left:-3px;}
+	</style>
 </head>
 
 <body>
@@ -53,59 +59,53 @@ p {
 		</p>--->
 
 
-		<body>
-		    <div class="boxhome">
-					<h4>Dimensions</h4>
-					<h3>
-						<label>Height</label>
-						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
-					</h3>
-					<h3>
-						<label>Length</label>
-						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
-					</h3>
-					<h3>
-						<label>Width </label>
-						<input type="text" id="size" name="size" style="width:100px;">  CM</input>
-					</h3>
-					<h3>
-						<label>Weight </label>
-						<input type="text" id="size" name="size" style="width:100px;">  KG</input>
-					</h3>
-					<table>
-						<tr>
-							<td><input type="submit" name="login_btn" value="Calculate Cost" class="btn-login"></td>
-						</tr>
-					</table>
-					<h3>
-						<label>Cost </label>
-						<input type="text" id="calccost" name="calccost" style="width:75px" readonly>
-					</h3>
+<body>
+	<div class="boxhome">
+		<h4>Dimensions</h4>
+		<h2>
+			<label>Height</label>
+			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+		</h2>
+		<h2>
+			<label>Length</label>
+			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+		</h2>
+		<h2>
+			<label>Width </label>
+			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+		</h2>
+		<h2>
+			<label>Weight </label>
+			<input type="text" id="size" name="size" style="width:150px;">  KG</input>
+		</h2>
+		<table>
+			<tr>
+				<td><input type="submit" name="login_home" value="Calculate Cost" class="btn-home"></td>
+			</tr>
+		</table>
+		<h2>
+			<label>Cost </label>
+			<input type="text" id="calccost" name="calccost" style="width:150px" readonly>
+		</h2>
+	</div>
+</body>
 
-
-
-
-		    </div>
-		</body>
-		<div class="header">
-	      <h1>On the Spot - Your Package Delivery Needs!</h1>
-	  </div>
-</html>
-
-		 <div>
-		<p align="right">
-		<b>Opening hours</b><br>
-		Mondey 9AM to 5PM<br>
-		Tuesday 9AM to 5PM<br>
-		Wednesday 9AM to 5PM<br>
-		Thursday 9AM to 5PM<br>
-		Friday 9AM to 2PM<br>
-	    </p>
-		<p align="left">
-		<b>Drop off Locations</b><br>
-		Central Brisbane St, Ipswich QLD 4305<br>
+<div class="bottomhome">
+	<div class="left">
+		Opening hours<br>
+		Mondey 9AM--5PM<br>
+		Tuesday 9AM--5PM<br>
+		Wednesday 9AM--5PM<br>
+		Thursday 9AM--5PM<br>
+		Friday 9AM--2PM<br>
+	</div>
+	<div class="right">
+		Drop off Locations<br>
 		365 Turbot St, Spring Hill QLD 4000<br>
+		Brisbane Rd, Booval QLD 4304<br>
+		Central Brisbane St, Ipswich QLD 4305<br>
 		Queens Plaza, Queen St, Brisbane QLD 4000<br>
 		The Markets, West End QLD 4101<br>
-		Brisbane Rd, Booval QLD 4304<br></p>
-		</div>
+	</div>
+</div>
+</html>
