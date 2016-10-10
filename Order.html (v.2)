@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
-	
+
 	<link rel="stylesheet" href="bill.css">
 </head>
 <body>
@@ -13,13 +13,12 @@
 	<li class="navi"><a href="home.html">Home</a></li>
 	<li class="navi"><a class="active" href="order.html">Order</a></li>
 	<li class="navi"><a href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
+	<li class="navi"><a href="contact & about.html">Contact & About</a></li>
 	<li class="navi"><a href="help.html">Help</a></li>
 	<li class="navi"><a href="login.php">Login</a></li>
 	<li class="navi"><a href="loginstaff.php">Staff Login</a></li>
 </ul>
-<div id="order">	
+<div id="order">
 	<form action="order.php" onsubmit="return validate();">
 		<fieldset>
 		<legend><h1>Order Form</h1></legend>
@@ -30,27 +29,27 @@
 				<input type="text" name="pickup_first_line">
 				<label id="error_pickup_first_line"></label>
 			</p>
-			
+
 			<p>
 				<label for="pickup_second_line">Second Line</label>
 				<input type="text" name="pickup_second_line">
 				<label id="error_pickup_second_line"></label>
 			</p>
-			
+
 			<p>
 				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
 				<input type="text" name="pickup_postcode">
 				<label id="error_pickup_postcode"></label>
 			</p>
-			
+
 			<p>
 				<label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_suburb">
 				<label id="error_pickup_suburb"></label>
 			</p>
-			
+
 		<br>
-		
+
 			<p class="orderhead"><h2>Recipent Details</h2></p>
 			<p>
 				<label for="recipent_first_name">First Name</label>
@@ -67,37 +66,37 @@
 				<input type="text" name="recipent_phone_number">
 				<label id="error_recipent_phone_number"></label>
 			</p>
-		
+
 		<br>
-		
+
 		<p class="orderhead"><h2>Drop-off Address</h2></p>
-		
+
 			<p>
 				<label for="dropoff_first_line">First Line</label>
 				<input type="text" name="dropoff_first_line">
 				<label id="error_dropoff_first_line"></label>
 			</p>
-			
+
 			<p>
 				<label for="dropoff_second_line">Second Line</label>
 				<input type="text" name="dropoff_second_line">
 				<label id="error_dropoff_second_line"></label>
 			</p>
-			
+
 			<p>
 				<label for="dropoff_postcode">Postcode</label> <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_postcode">
 				<label id="error_dropoff_postcode"></label>
 			</p>
-			
+
 			<p>
 				<label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_suburb">
 				<label id="error_dropoff_suburb"></label>
 			</p>
-			
-		
-		<br>	
+
+
+		<br>
 		<p class="orderhead"><h2>Package Details</h2></p>
 			<p>
 				<label for="package_description">Description</label>
@@ -124,7 +123,7 @@
 				<input type="text" name="package_weight">
 				<label id="error_package_weight"></label>
 			</p>
-			
+
 		<p>
 			<input type="submit" value="Submit Order">
 		</p>
@@ -167,7 +166,7 @@ function validate_second_line(str, lbl){
 		lbl.innerHTML = '\tToo many characters entered (max : 48)!';
 		return false;
 	}
-	
+
 	return true;
 }
 function validate_postcode(str, lbl){
@@ -249,7 +248,7 @@ function validate_first_name(str, lbl){
 		lbl.innerHTML = '\tToo many characters (max : 16)!';
 		return false;
 	}
-	
+
 	return true;
 }
 function validate_last_line(str, lbl){
@@ -361,7 +360,7 @@ function validate() {
 	//there must be a better way to do this
 	//this is so fucking bad
 	//I fucking hate this
-	
+
 	var str_pickup_first_line = document.getElementsByName('pickup_first_line')[0].value;
 	var lbl_pickup_first_line = document.getElementById('error_pickup_first_line');
 	var str_pickup_second_line = document.getElementsByName('pickup_second_line')[0].value;
@@ -374,12 +373,12 @@ function validate() {
 	var lbl_pickup_state = document.getElementById('error_pickup_state');
 	var str_pickup_country = document.getElementsByName('pickup_country')[0].value;
 	var lbl_pickup_country = document.getElementById('error_pickup_country');
-	
+
 	var str_first_name = document.getElementsByName('recipent_first_name')[0].value;
 	var lbl_first_name = document.getElementById('error_recipent_first_name');
 	var str_last_name = document.getElementsByName('recipent_last_name')[0].value;
 	var lbl_last_name = document.getElementById('error_recipent_last_name');
-	
+
 	var str_dropoff_first_line = document.getElementsByName('pickup_first_line')[0].value;
 	var lbl_dropoff_first_line = document.getElementById('error_dropoff_first_line');
 	var str_dropoff_second_line = document.getElementsByName('dropoff_second_line')[0].value;
@@ -392,7 +391,7 @@ function validate() {
 	var lbl_dropoff_state = document.getElementById('error_dropoff_state');
 	var str_dropoff_country = document.getElementsByName('dropoff_country')[0].value;
 	var lbl_dropoff_country = document.getElementById('error_dropoff_country');
-	
+
 	var str_description = document.getElementsByName('package_description')[0].value;
 	var lbl_description = document.getElementById('error_package_description');
 	var str_length = document.getElementsByName('package_length')[0].value;
@@ -403,11 +402,11 @@ function validate() {
 	var lbl_height = document.getElementById('error_package_height');
 	var str_weight = document.getElementsByName('package_weight')[0].value;
 	var lbl_weight = document.getElementById('error_package_weight');
-	
-	
-	
-	
-	  
+
+
+
+
+
 	// pickup
 	return	validate_first_line		(str_pickup_first_line, 	lbl_pickup_first_line)
 	&& 		validate_second_line	(str_pickup_second_line, 	lbl_pickup_second_line)
@@ -415,11 +414,11 @@ function validate() {
 	&& 		validate_suburb			(str_pickup_suburb, 		lbl_pickup_suburb)
 	&& 		validate_state			(str_pickup_state, 			lbl_pickup_state)
 	&& 		validate_country		(str_pickup_country, 		lbl_pickup_country)
-	
+
 	// name
 	&& 		validate_first_name		(str_first_name, 			lbl_first_name)
 	&& 		validate_last_line		(str_last_name, 			lbl_last_name)
-	
+
 	// dropoff
 	&& 		validate_first_line		(str_dropoff_first_line, 	lbl_dropoff_first_line)
 	&& 		validate_second_line	(str_dropoff_second_line, 	lbl_dropoff_second_line)
@@ -433,7 +432,7 @@ function validate() {
 	&&		validate_width			(str_width, 				lbl_width)
 	&& 		validate_height			(str_height, 				lbl_height)
 	&& 		validate_weight			(str_weight, 				lbl_weight);
-	
-	
+
+
 }
 </script>
