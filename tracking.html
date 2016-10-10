@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
-	
+
 	<link rel="stylesheet" type=text/css href="tracking.css"></link>
 </head>
 
@@ -16,14 +16,13 @@
 	<li class="navi"><a href="home.html">Home</a></li>
 	<li class="navi"><a href="order.html">Order</a></li>
 	<li class="navi"><a class="active" href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
+	<li class="navi"><a href="contact & about.html">Contact & About</a></li>
 	<li class="navi"><a href="help.html">Help</a></li>
 	<li class="navi"><a href="login.php">Login</a></li>
 	<li class="navi"><a href="loginstaff.php">Staff Login</a></li>
 </ul>
-</body>	
-	
+</body>
+
 	<form action="tracking.php" onsubmit="return validate()">
 		<fieldset>
 			<legend>Package ID</legend>
@@ -34,7 +33,7 @@
 			<input type="submit" value="Submit">
 		</fieldset>
 	</form>
-	
+
 	  <div class="tabbed">
       <input name="tabbed" id="tabbed1" type="radio" checked>
       <section>
@@ -42,8 +41,8 @@
           <label for="tabbed1">Terms and conditions</label>
         </h1>
         <div>
-          You are authorized to use this tracking system solely to track 
-	shipments tendered via Bill website by, for, or to you. 
+          You are authorized to use this tracking system solely to track
+	shipments tendered via Bill website by, for, or to you.
 	No other use may be made of the tracking system and information without authorise written consent.
         </div>
       </section>
@@ -53,11 +52,11 @@
           <label for="tabbed2">Tracking FAQS</label>
         </h1>
         <div>
-         Needs any help regrading tracking or if unable to track your package please fell the 
+         Needs any help regrading tracking or if unable to track your package please fell the
        contact us form and mention your problem in comment section
         </div>
       </section>
-  
+
 </html>
 
 
@@ -66,12 +65,12 @@
 <script type="text/javascript">
 function validate_package_id(){
 	var package_id = document.getElementsByName('package_id')[0].value;
-	
+
 	if(package_id == ""){
 		document.getElementById('error_package_id').innerHTML = '\tPlease enter the package\'s tracking number.';
 		return false;
 	}
-	
+
 	return true;
 }
 function validate() {
