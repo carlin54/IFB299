@@ -19,8 +19,7 @@
               <li><a href="home.html">Home</a></li>
               <li><a href="order.html">Order</a></li>
               <li><a href="tracking.html">Tracking</a></li>
-              <li><a href="contact & locations.html">Contact & Locations</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
               <li><a href="help.html">Help</a></li>
               <li><a href="customerlogout.php">Customer Lougout</a></li>
           </ul>
