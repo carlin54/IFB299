@@ -1,182 +1,88 @@
-<!DOCTYPE html>
-<html>
+body{
+  font-family: arial,sans-serif;
+}
 
-<head>
-    <title>On the Spot - Your Package Delivery Needs!</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css"></link>
-</head>
-
-<body>
-<div id="nav"><br>
-      <div id="nav_wrapper"><br>
-
-  <ul class="navi">
-	 <li class="navi"><a href="home.html">Home</a></li>
-	 <li class="navi"><a href="order.html">Order</a></li>
-	 <li class="navi"><a href="tracking.html">Tracking</a></li>
-	 <li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	 <li class="navi"><a href="about.html">About</a></li>
-	 <li class="navi"><a class="active" href="help.html">Help</a></li>
-	 <li class="navi"><a href="login.php">Login</a></li>
-	 <li class="navi"><a href="loginstaff.php">Staff Login</a></li>
-</ul>
-
-
-  <<div class="box1">
-
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Contact Us Today!</legend>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-       <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone" placeholder="(0481)555-112" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Address</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">City</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="city" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
-
-<!-- Select Basic -->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">State</label>
-    <div class="col-md-4 selectContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" >
-      <option value=" " >Please select your state</option>
-      <option>Queensland</option>
-      <option>New south Wales</option>
-      <option >Victoria</option>
-      <option >Western Australia</option>
-      <option >South Australia</option>
-      <option >Australian Capital territory</option>
-      <option >Tasmania</option>
-
-    </select>
-  </div>
-</div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
-    </div>
-</div>
-</div>
-
-<!-- radio checks -->
- <div class="form-group">
-                        <label class="col-md-4 control-label">Are you recepient?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="yes" /> Yes
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="no" /> No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-<!-- Text area -->
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Complaint description</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-        	<textarea class="form-control" name="comment" placeholder="Complaint description"></textarea>
-  </div>
-  </div>
-</div>
-
-<!-- Success message -->
-<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-</div>
-    </div><!-- /.container -->
+body{
+  margin: 0 auto;;
+  background-image: url("../img/registerbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 1000px;
+  background-attachment: fixed;
+}
+/*#nav {
+  width: 700px;
+  height: 200px;
+  background: #ccc;
+}*/
+#nav_wrapper{
+  height: 100px;
+  width: 900px;
+  background: #377D7A;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  /*opacity: 0.8;
+  filter:alpha (opacity=80);*/
+  background-color: rgba(45, 64, 82, 0.7);
+  border-radius: 5px;
+}
+#nav_wrapper ul li{
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  padding: 15px;
+}
+#nav_wrapper a{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+#nav_wrapper ul li:hover{
+  background: red;
+  transition: all 0.45s;
+  border-radius: 4px;
+  background-color: rgba(27, 39, 49, 0.7);
+  /*opacity: 0.9;
+  filter:alpha (opacity=90);*/
+}
+.container{
+  width: 600px;
+  height: 800px;
+  text-align: center;
+  background-color: rgba(52, 73, 94, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 140px;
+}
+.container img{
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+  margin-bottom: : 30px;
+  border-radius: 4px;
+}
+input[type="text"],input[type="password"]{
+  height: 45px;
+  width: 280px;
+  font-size: 18px;
+  border: none;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 160px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.btn-login{
+  padding: 15px 30px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  margin-left: 150px;
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+  margin-bottom: 20px;
+}
+p{
+  color: #fff;
+}
