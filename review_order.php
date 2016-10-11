@@ -196,12 +196,12 @@
 				echo "<table>
 							<tr>
 								<th>DESCRIPTION</th>
-								<th>LENGTH</th>
-								<th>WIDTH</th>
-								<th>HEIGHT</th>
-								<th>M^3</th>
-								<th>WEIGHT</th>
-								<th>COST</th>
+								<th>LENGTH (cm)</th>
+								<th>WIDTH (cm)</th>
+								<th>HEIGHT (cm)</th>
+								<th>WEIGHT (M^3)</th>
+								<th>WEIGHT (g)</th>
+								<th>COST ($)</th>
 							</tr>
 							<tr>
 							<td>" . $package_description . "</td>
