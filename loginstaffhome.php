@@ -16,7 +16,7 @@
   <div id="nav"><br>
     <div id="nav_wrapper"><br>
       <ul>
-        <li><a href="home.html">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a href="order.html">Order</a></li>
         <li><a href="tracking.html">Tracking</a></li>
         <li><a href="contact & about.html">Contact & About</a></li>
