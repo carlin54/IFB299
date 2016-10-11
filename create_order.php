@@ -27,6 +27,22 @@
 		header('Location: http://localhost/login.php') ;
 	}
 	
+
+	
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "ifb299";
+
+	$link = mysqli_connect($servername, $username, $password, $dbname);
+
+	if (!$link) {
+		echo "<p>Error: Unable to connect to MySQL." . PHP_EOL . "</p>";
+		echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
+		echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
+		exit;
+	} 
+	
 ?>
 
 <div id="order">	
@@ -50,7 +66,16 @@
 			
 			<p>
 				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
-				<input type="text" name="pickup_postcode">
+				<?php
+					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
+					$postcode_results = $link->query($fetch_postcodes);
+	
+					echo "<select name='pickup_postcode'>";
+					while ($row = $postcode_results->fetch_array(MYSQLI_ASSOC)) {
+						echo "<option value='" . $row['POSTCODE'] . "'>" . $row['POSTCODE'] . "</option>";
+					}
+					echo "</select>";				
+				?>
 				<label id="error_pickup_postcode"></label>
 			</p>
 			
@@ -103,8 +128,19 @@
 			</p>
 			
 			<p>
-				<label for="dropoff_postcode">Postcode</label> <!--- This should be a dropdown -->
-				<input type="text" name="dropoff_postcode">
+				<label for="dropoff_postcode">Postcode</label>
+				
+				<?php
+					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
+					$postcode_results = $link->query($fetch_postcodes);
+	
+					echo "<select name='dropoff_postcode'>";
+					while ($row = $postcode_results->fetch_array(MYSQLI_ASSOC)) {
+						echo "<option value='" . $row['POSTCODE'] . "'>" . $row['POSTCODE'] . "</option>";
+					}
+					echo "</select>";				
+				?>
+
 				<label id="error_dropoff_postcode"></label>
 			</p>
 			
@@ -473,3 +509,7 @@ function validate() {
 }
 
 </script>
+
+<?php
+	$link->close();
+?>
