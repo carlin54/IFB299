@@ -34,4 +34,7 @@ DROP TABLE IF EXISTS `Website Administrators`;
 DROP TABLE IF EXISTS `Customers Pickup Addresses`;
 DROP TABLE IF EXISTS `Addresses`;
 DROP TABLE IF EXISTS `Deliverable Postcodes`;
+/*DROP TABLE IF EXISTS `Deliverable Suburbs`;*/
+/*DROP TABLE IF EXISTS `Deliverable States`;*/
+/*DROP TABLE IF EXISTS `Deliverable Countries`;*/
 DROP TABLE IF EXISTS `Recipents`;
