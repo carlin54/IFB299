@@ -179,6 +179,7 @@
 				$package_height = $_SESSION['package_height'];
 				$package_weight = $_SESSION['package_weight'];
 				$package_m3 = $_SESSION['package_m3'];
+				$package_insurance = $_SESSION['package_insurance'];
 				$package_cost = $_SESSION['package_cost'];
 				$date_of_order = date("Y-m-d");
 				$status_id = get_status();
@@ -188,6 +189,7 @@
 				( 	RECIPENT_ID,
 					SIZE,
 					WEIGHT,
+					INSURANCE,
 					ORDER_PICKED_UP_BY,
 					ORDER_DROPPED_OFF_BY,
 					DATE_OF_ORDER,
@@ -204,6 +206,7 @@
 					'" . $recipent_id 			. "',
 					'" . $package_m3 			. "',
 					'" . $package_weight		. "',
+					'" . $package_insurance		. "',
 					'',
 					'',
 					'" . $date_of_order 		. "',

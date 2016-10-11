@@ -189,7 +189,11 @@
 				<input type="text" name="package_weight">
 				<label id="error_package_weight"></label>
 			</p>
-			
+			<p>
+				<label for="package_insurance">Insurance ($)</label>
+				<input type="text" name="package_insurance">
+				<label id="error_package_insurance"></label>
+			</p>
 		<p>
 			<input type="submit" value="Submit Order">
 		</p>
@@ -426,7 +430,17 @@ function validate_weight(str, lbl){
 	}
 	return true;
 }
-
+function validate_insurance(str, lbl){
+	lbl.innerHTML = '';
+	if(!isNumeric(str)){
+		lbl.innerHTML = '\tPlease fill the field!';
+	}
+	if(parseInt(str) > 250){
+		lbl.innerHTML = 'This is too much (max : $250)!';
+		return false;
+	}
+	return true;
+}
 function validate() {
 	//there must be a better way to do this
 	//this is so fucking bad
@@ -473,7 +487,8 @@ function validate() {
 	var lbl_height = document.getElementById('error_package_height');
 	var str_weight = document.getElementsByName('package_weight')[0].value;
 	var lbl_weight = document.getElementById('error_package_weight');
-	
+	var str_insurance = document.getElementsByName('package_insurance')[0].value;
+	var lbl_insurance = document.getElementById('error_package_insurance');
 	
 	
 	
@@ -503,7 +518,8 @@ function validate() {
 	&&		validate_length			(str_length, 				lbl_length)
 	&&		validate_width			(str_width, 				lbl_width)
 	&& 		validate_height			(str_height, 				lbl_height)
-	&& 		validate_weight			(str_weight, 				lbl_weight);
+	&& 		validate_weight			(str_weight, 				lbl_weight)
+	&& 		validate_insurance		(str_insurance, 			lbl_insurance);
 	
 	
 }

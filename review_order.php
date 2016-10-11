@@ -96,11 +96,13 @@
 				$_SESSION['package_width'] = $package_width = $_GET['package_width'];
 				$_SESSION['package_height'] = $package_height = $_GET['package_height'];
 				$_SESSION['package_weight'] = $package_weight = $_GET['package_weight'];
+				$_SESSION['package_insurance'] = $package_insurance = $_GET['package_insurance'];
 				$_SESSION['package_m3'] = $package_m3 = $package_length * $package_width * $package_height;
 				
 				
 				$package_m3_scalar = 0.0;
 				$package_weight_scalar = 0.0;
+				$package_insurance_scalar = 0.0;
 				$cost_query = "
 					SELECT * FROM `cost weight`
 					ORDER BY DATE_ADDED;";
@@ -111,10 +113,14 @@
 					$row = $cost_result->fetch_assoc();
 					$package_m3_scalar = $row['SIZE_SCALER'];
 					$package_weight_scalar = $row['WEIGHT_SCALER'];
+					$package_weight_scalar = $row['INSURANCE_SCALER'];
 				}
 				$cost_result->close();
 				
-				$_SESSION['package_cost'] = $package_cost = $package_m3 * $package_m3_scalar + $package_weight * $package_weight_scalar;
+				$_SESSION['package_cost'] = $package_cost = 
+					$package_m3 * $package_m3_scalar + 
+					$package_weight * $package_weight_scalar + 
+					$package_insurance * $package_insurance_scalar;
 				
 				
 				
