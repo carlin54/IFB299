@@ -1,3 +1,48 @@
+<?php
+@$a=$_POST['heigth'];
+@$b=$_POST['length'];
+@$c=$_POST['width'];
+@$d=$_POST['weight'];
+
+if(isset($_POST['add']))
+{
+	$e=$a*$b*$c/6000;
+
+	if($e>$d){
+		$x=$e;
+	}
+	else{
+		$x=$d;
+	}
+	if ($x<=5){
+		$sum = 10;
+
+	}
+	else if ($x>5 && $x<=10){
+		$sum = 15;
+
+	}
+	else if ($x>10 && $x<=15){
+		$sum = 20;
+
+	}
+	else if ($x>15 && $x<=20){
+		$sum = 25;
+
+	}
+	else if ($x>20 && $x<=25){
+		$sum = 30;
+
+	}
+	else if ($x>25 && $x<=30){
+		$sum = 35;
+
+	}
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,34 +105,37 @@
 
 
 <body>
+	<form method="post">
 	<div class="boxhome">
 		<h4>Dimensions</h4>
 		<h2>
 			<label>Height</label>
-			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+			<input type="text" placeholder="Enter Height" id="size" name="height" style="width:150px;">  CM</input>
 		</h2>
 		<h2>
 			<label>Length</label>
-			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+			<input type="text" placeholder="Enter Length" id="size" name="length" style="width:150px;">  CM</input>
 		</h2>
 		<h2>
 			<label>Width </label>
-			<input type="text" id="size" name="size" style="width:150px;">  CM</input>
+			<input type="text" placeholder="Enter Width" id="size" name="width" style="width:150px;">  CM</input>
 		</h2>
 		<h2>
 			<label>Weight </label>
-			<input type="text" id="size" name="size" style="width:150px;">  KG</input>
+			<input type="text" placeholder="Enter Weight" id="size" name="weight" style="width:150px;">  KG</input>
 		</h2>
 		<table>
 			<tr>
-				<td><input type="submit" name="login_home" value="Calculate Cost" class="btn-home"></td>
+				<td><input type="submit" name="add" value="Calculate Cost" class="btn-home"></td>
 			</tr>
 		</table>
 		<h2>
 			<label>Cost </label>
-			<input type="text" id="calccost" name="calccost" style="width:150px" readonly>
+			<input type="text" value="<?php echo @$sum ?>" id="calccost" name="calccost" style="width:70px" readonly>
+			$
 		</h2>
 	</div>
+</form>
 </body>
 
 <div class="bottomhome">
