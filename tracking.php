@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="On the Spot Landing Page">
 	<title>On the Spot - Your Package Delivery Needs!</title>
-	
-	<link rel="stylesheet">  <!-- href="bill.css" -->
+	<link rel="stylesheet" type=text/css href="tracking.css"></link>  <!-- href="bill.css" -->
 </head>
 
-<body>
+<!--<body>
 <ul class="navi">
 	<li class="navi"><a href="home.html">Home</a></li>
 	<li class="navi"><a href="order.html">Order</a></li>
 	<li class="navi"><a class="active" href="tracking.html">Tracking</a></li>
 	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
 	<li class="navi"><a href="about.html">About</a></li>
-</ul>
+</ul>-->
+<body>
+  <div id="nav"><br>
+      <div id="nav_wrapper"><br>
+          <ul>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="order.html">Order</a></li>
+              <li><a href="tracking.html">Tracking</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
+          </ul>
+        </div>
+    </div>
+</body>
 
-	
 	<form action="tracking.php">
 		<fieldset>
 			<legend>Package Infomation</legend>
-			
+
 			<?php
 				$servername = "localhost";
 				$username = "root";
 				$password = "";
 				$dbname = "ifb299";
-		
+
 				$link = mysqli_connect($servername, $username, $password, $dbname);
-		
+
 				if (!$link) {
 					echo "<p>Error: Unable to connect to MySQL." . PHP_EOL . "</p>";
 					echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
 					echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
 					exit;
 				}
-				
+
 				$query = "
-					SELECT 
+					SELECT
 					recipents.RECIPENT_FIRST_NAME,
 					recipents.RECIPENT_LAST_NAME,
 					addresses.ADDRESS_FIRST_LINE,
@@ -58,7 +69,7 @@
 
 					INNER JOIN customers
 					ON orders.CUSTOMER_ID=customers.CUSTOMER_ID
-					
+
 					INNER JOIN recipents
 					ON orders.RECIPENT_ID=recipents.RECIPENT_ID
 
@@ -67,16 +78,16 @@
 
 					INNER JOIN addresses
 					ON orders.DROP_OFF_LOCATION=addresses.ADDRESS_ID
-					
+
 					WHERE orders.ORDER_ID = " . $_GET["package_id"] . ";";
 				//There may be an issue with double joining
 				$result = $link->query($query);
-				
+
 				if ($result->num_rows == 0){
 					echo "<p>Sorry, package not found.</p>";
 				}else if($result->num_rows == 1){
 					$row = $result->fetch_assoc();
-					
+
 					echo "<h2><u>Recipent</u></h2>";
 					echo "<p><table>
 							<tr>
@@ -89,7 +100,7 @@
 							</tr>
 						</table></p>";
 					echo "<br>";
-					
+
 					echo "<h2><u>Delivery Address</u></h2>";
 					echo "<table>
 							<tr>
@@ -110,7 +121,7 @@
 							</tr>
 						</table><p>";
 					echo "<br>";
-					
+
 					echo "<h2><u>Package</u></h2>";
 					echo "<table>
 							<tr>
@@ -131,23 +142,23 @@
 								<td>" . $row['DATE_OF_PICKUP'] 		. "</td>
 								<td>" . $row['DATE_OF_DELIVERY']	. "</td>
 							</tr>
-						</table><p>";					
+						</table><p>";
 					echo "<br>";
-					
+
 				}else{
 					echo "Error: More than one package found with that ID.";
 				}
-				
-				
+
+
 				mysqli_close($link);
 			?>
-			
+
 		</fieldset>
 	</form>
 
 	<body>
 
-	
+
 
 </body>
 </html>
