@@ -130,8 +130,8 @@ if(isset($_POST['add']))
 			</tr>
 		</table>
 		<h2>
-			<label>Cost </label>
-			<input type="text" value="<?php echo @$sum ?>" id="calccost" name="calccost" style="width:70px" readonly>
+			<label>Total Cost </label>
+			<input type="text" value="<?php echo @$sum ?>" id="calccost" name="calccost" style="width:100px" readonly>
 			$
 		</h2>
 	</div>
@@ -140,7 +140,7 @@ if(isset($_POST['add']))
 
 <div class="bottomhome">
 	<div class="left">
-		Opening hours<br>
+		Opening Hours<br>
 		Mondey 9AM--5PM<br>
 		Tuesday 9AM--5PM<br>
 		Wednesday 9AM--5PM<br>
@@ -148,7 +148,7 @@ if(isset($_POST['add']))
 		Friday 9AM--2PM<br>
 	</div>
 	<div class="right">
-		Drop off Locations<br>
+		Drop Off Locations<br>
 		365 Turbot St, Spring Hill QLD 4000<br>
 		Brisbane Rd, Booval QLD 4304<br>
 		Central Brisbane St, Ipswich QLD 4305<br>
