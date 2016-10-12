@@ -3,7 +3,7 @@ body{
 }
 
 body{
-  margin: 0 auto;;
+  margin: 0 auto;
   background-image: url("../img/loginbackground.jpg");
   background-repeat: no-repeat;
   background-size: 100% 1000px;
@@ -152,7 +152,7 @@ h2{
   text-align: center;
   top: 843px;/*878*/
   width: 1910px;
-  height: 116px;
+  height: 120px;
   padding: 5px;
   position: fixed;
 }
