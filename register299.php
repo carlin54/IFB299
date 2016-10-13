@@ -85,7 +85,7 @@
       <img src="img/register.png">
       <h1>New Customer Signup</h1>
 	
-	<form action="1.php" method="POST" autocomplete="off">
+	<form action="register.php" method="POST" autocomplete="off">
 		<table>
 		<tr>
 		<td>First Name:</td><td><input type="text" name="CUSTOMER_FIRST_NAME" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_FIRST_NAME.'"'; }?> required/></td>
@@ -110,13 +110,11 @@
 		<td>Phone Number:</td><td><input type="text" name="CUSTOMER_HOMEPHONE" <?php if ($validUser == 0){ echo 'value="'.$CUSTOMER_HOMEPHONE.'"'; }?> required/></td>
 		</tr>
 		<tr>		
-		
-		<td></td><td><input type="submit" value="Submit" name="Submit" /></td>
+		 <td></td><td><input type="submit" value="Submit" name="Submit" class="btn-register" /></td>
 	</tr>
 	</table>
 	</form>
-		<p>*Please complete this form to signup for a new account. All fields must be
-						completed.</p>
+		<p>*Please complete this form to signup for a new account. All fields must be	completed.</p>
 						Already have an account? <a href = "login.php" tite = "login">Login now!
 						</div>
 </body>
