@@ -69,7 +69,8 @@
                 </table>
 
 
-             </form>
+                  </form>
+             Don't have an account? <a href = "registerstaff299.php" tite = "register">Register now!
     </div>
 </body>
 </html>
