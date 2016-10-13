@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="On the Spot Landing Page">
-	<title>On the Spot - Your Package Delivery Needs!</title>
-	
-	<link rel="stylesheet"> <!---href="bill.css"--->
+    <title>On the Spot - Your Package Delivery Needs!</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"></link>
 </head>
-
 <body>
-<ul class="navi">
-	<li class="navi"><a href="home.html">Home</a></li>
-	<li class="navi"><a class="active" href="order.html">Order</a></li>
-	<li class="navi"><a href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
-</ul>
+  <div id="nav"><br>
+      <div id="nav_wrapper"><br>
+          <ul>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="create_order.php">Order</a></li>
+              <li><a href="tracking.html">Tracking</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
+              <li><a href="help.php">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
+          </ul>
+        </div>
+    </div>
+</body>
 
 <div id="order">	
 	<form action="submit_order.php">
 		<fieldset>
-		<legend>Order Status</legend>
+		<legend><h1>Order Status</h1></legend>
 			<?php
 				
 				function add_address($link, $first_line, $second_line, $postcode, $suburb, $state, $country){
@@ -129,7 +131,7 @@
 				session_start();
 				
 				if (!isset($_SESSION['CUSTOMER_USERNAME'])){
-					header('Location: http://localhost/login.php') ;
+					header('Location: http://localhost/IFB299/login.php') ;
 				}
 
 				
@@ -145,9 +147,7 @@
 					echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
 					echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
 					exit;
-				} else {
-					echo "<p>Success: Connect to MySQL.</p>";
-				}
+				} 
 							
 			
 				$sender_id = $_SESSION['sender_id'];
@@ -224,6 +224,36 @@
 				if (!$link->query($insert_order) === TRUE){
 					echo "<p>Error: " . $insert_order . "<br>" . $link->error . "</p>";
 				}
+				
+				$tracking_query = "
+					SELECT 
+					*
+					FROM `orders`
+					WHERE 
+					orders.RECIPENT_ID = \"" . $recipent_id . "\" AND
+					orders.SIZE = \"" . $package_m3 . "\" AND
+					orders.WEIGHT = \"" . $package_weight . "\" AND
+					orders.INSURANCE = \"" . $package_insurance . "\" AND
+					orders.DATE_OF_ORDER = \"" . $date_of_order . "\" AND
+					orders.CUSTOMER_ID = \"" . $sender_id . "\" AND
+					orders.PICKUP_LOCATION = \"" . $pickup_address_id . "\" AND
+					orders.DROP_OFF_LOCATION = \"" . $dropoff_address_id . "\" 
+					ORDER BY orders.ORDER_ID DESC;";
+				
+				$tracking_results = $link->query($tracking_query);
+				if ($tracking_results->num_rows == 0){
+					echo "<p>Sorry, did not submit.</p>";
+					exit;
+				}else if($tracking_results->num_rows == 1){
+					$row = $tracking_results->fetch_assoc();
+					echo "Tracking ID #:" . $row['ORDER_ID'] . ".";
+					
+				}else{
+					$row = $tracking_results->fetch_assoc();
+					echo "<h2>Tracking ID #:" . $row['ORDER_ID'] . ".</h2>";
+					exit;					
+				}
+				$tracking_results->close();
 				
 				$link->close();
 			?>

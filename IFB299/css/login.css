@@ -93,6 +93,33 @@ body{
   margin: 0 auto;
   margin-top: 10px;
 }
+.boxhome3{
+    width: 600px;
+  height: 2270px;
+  text-align: left;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.boxhome4{
+    width: 600px;
+  height: 900px;
+  text-align: left;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.boxhome5{
+    width: 600px;
+  height: 900px;
+  text-align: left;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 .box1{
   width: 600px;
   height: 900px;
@@ -102,7 +129,15 @@ body{
   margin: 0 auto;
   margin-top: 100px;
 }
-
+.box2{
+  width: 600px;
+  height: 2000px;
+  text-align: left;
+  background-color: rgba(52, 73, 94, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
 input[type="text"],input[type="password"]{
   height: 45px;
   width: 300px;
@@ -131,6 +166,28 @@ input[type="text"],input[type="password"]{
   border-radius: 4px;
   border: none;
   margin-left: 228px;
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+  margin-bottom: 20px;
+}
+.btn-create{
+  padding: 15px 30px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  margin-left: 0px;
+  background-color: #2ECC71;
+  border-bottom: 4px solid #27AE60;
+  margin-bottom: 20px;
+}
+.btn-review{
+  padding: 15px 30px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  margin-left: 0px;
   background-color: #2ECC71;
   border-bottom: 4px solid #27AE60;
   margin-bottom: 20px;

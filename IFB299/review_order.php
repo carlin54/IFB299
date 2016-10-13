@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="On the Spot Landing Page">
-	<title>On the Spot - Your Package Delivery Needs!</title>
-	
-	<link rel="stylesheet"> <!---href="bill.css"--->
+    <title>On the Spot - Your Package Delivery Needs!</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"></link>
 </head>
-
 <body>
-<ul class="navi">
-	<li class="navi"><a href="home.html">Home</a></li>
-	<li class="navi"><a class="active" href="order.html">Order</a></li>
-	<li class="navi"><a href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
-</ul>
-
+  <div id="nav"><br>
+      <div id="nav_wrapper"><br>
+          <ul>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="create_order.php">Order</a></li>
+              <li><a href="tracking.html">Tracking</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
+              <li><a href="help.php">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
+          </ul>
+        </div>
+    </div>
+</body>
+<div class="boxhome4">
 <div id="order">	
 	<form action="submit_order.php">
 		<fieldset>
-		<legend>Order Information</legend>
+		<legend><h1>Order Information</h1></legend>
 			<?php
 				session_start();
 				
 				if (!isset($_SESSION['CUSTOMER_USERNAME'])){
-					header('Location: http://localhost/login.php') ;
+					header('Location: http://localhost/IFB299/login.php') ;
 				}
 	
 				$servername = "localhost";
@@ -40,8 +43,6 @@
 					echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
 					echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
 					exit;
-				} else {
-					echo "<p>Success: Connect to MySQL.</p>";
 				}
 				
 				$_SESSION["CUSTOMER_USERNAME"] = "Carlin54";
@@ -217,7 +218,7 @@
 								
 				?>
 				
-			<input type="submit" value="Submit Order">
+			<input type="submit" value="Submit Order" class="btn-review">
 
 		</fieldset>
 	</form>

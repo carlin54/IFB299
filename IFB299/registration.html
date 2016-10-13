@@ -1,0 +1,243 @@
+<html>
+<head>
+ <title> Registration</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+ <!-- web bbs programmed & desinged by KIM --> 
+
+ <style type="text/css">
+ <!--
+ a:link,a:visited,a:active{
+ text-decoration : none;
+ }
+ a:hover{
+ text-decoration : underline;
+ color : red;
+ }
+ TABLE, TD, TR, TH {
+ front size : 10pt;
+ }
+ //-->
+ </style>
+ 
+ <script language = "javascript">
+<!--
+ funtion chckInput (form) {
+ if(!form.name.value){
+ alert("Enter your name");
+ form.name.focus();
+ return;
+ }
+ if(!form.id.value){
+ alert("Enter your ID");
+ form.id.focus();
+ return;
+ }
+ if(!IsID(form.id.name){
+ alert("Enter your ID at least five strings");
+ form.id.focus();
+ form.id.select();
+ return;
+ }
+ if(!form.passwd.value){
+ alert("Enter your password");
+ form.passwd.focus();
+ return;
+ }
+ if(!IsPW(form.passwd.name){
+ alert("Enter your Password at least five strings");
+ form.passwd.focus();
+ form.passwd.select();
+ return;
+ }
+ if(!form.passwd.value != form.repasswd.value){
+ alert("Please Enter your password again");
+ form.repasswd.focus();
+ form.repasswd.select();
+ return;
+ }
+ if(form.cp1.value){
+ if(!IsNumber(form.cp1.name)){
+ alert("Please Enter number"
+ form.cp1.focus();
+ return;
+ }
+ }
+ if(form.cp2.value){
+ if(!IsNumber(form.cp1.name)){
+ alert("Please Enter number"
+ form.cp2.focus();
+ return;
+ }
+ }
+ if(form.cp3.value){
+ if(!IsNumber(form.cp1.name)){
+ alert("Please Enter number"
+ form.cp3.focus();
+ return;
+ }
+ }
+ form.submit();
+ }
+ 
+ funtionIsID(formname){
+ var form = eval("document.signform." + formname);
+ 
+ if(form.value.length<5 || form.value.length >10 {
+ return false;
+ }
+ for(var i=0;i < form.value.length; i++){
+ var chr= form.value.substr(i,1);
+ if((chr < '0' || chr > '9') && (chr <'a' || chr > 'z')){
+ return false;
+ }
+ }
+ return true;
+ }
+ funtionIsPW(formname){
+ var form = eval("document.signform." + formname);
+ 
+ if(form.value.length<4 || form.value.length >8 {
+ return false;
+ }
+ for(var i=0;i < form.value.length; i++){
+ var chr= form.value.substr(i,1);
+ if((chr < '0' || chr > '9') && (chr <'a' || chr > 'z') && (chr <'A' || chr 'Z')){
+ return false;
+ }
+ }
+ return true;
+ }
+ funtionIsNumber(formname){
+ var form = eval("document.signform." + formname);
+ 
+ for(var i=0;i < form.value.length; i++){
+ var chr= form.value.substr(i,1);
+ if((chr < '0' || chr > '9')){
+ return false;
+ }
+ }
+ return true;
+ }
+ funtion ZipWindow(ref,what){
+ var window_left = (screen.width-640)/2;
+ var window_top = (screen.height-480)/2;
+ ref = ref + "?what=" + what;
+ window.open(ref,"zipWin",'width=550,height=200,status=no,top=' + window_top+ ',left=' + window_left+ '');
+ }
+ funtion check_ID_Window(ref){
+ var id = eval (document.signform.id);
+ 
+ if(!id.value){
+ alert('Please Enter your ID')
+ id.focus();
+ return;
+ }else{
+ ref = ref + "?id=" + id.value;
+ var window_left = (screen.width-640)/2;
+ var window_top = (screen.height-480)/2;
+ window.open(ref,"checkIDWin",'width=250,height=160,status=no,top=' + window_top + ',left=' + window_left + ' ');
+ }
+ }
+ //-->
+ </script>
+ </head>
+ 
+ <body bgColor="FFFFFF">
+ <?
+ $TITLE_BG= "lightgreen";
+ $COLUMN_NAME= "CFD0ED";
+ $COLUMN_VALUE="FAFAEE";
+ ?>
+ 
+ 
+ <form name='sigmform" method="POST" action="register.html">
+ 
+ <table width ="652" cellspacing="1" cellpadding="0" border="0" align="center">
+ <tr><td align="center" bgColor="#800080">
+ 
+ <table width ="650" cellspacing="1" cellpadding="5" border="0" align="center">
+ 
+<!----------------------Information-------------------------> 
+ <tr>
+	<td width ="640" align="center" bgColor ="<?echo ("TTTLE_BG")?>"
+	colspan=4><img src="icon/check_lightgreen.gif"> Please fill the blank</td>
+ </tr>
+<!------------------------Name------------------------------> 
+ <tr>
+	<td width ="140" bgColor ="<?echo ("$COLUMN_NAME")?>" align="center">English name<img src="icon/check.gif"></td>
+	<td width ="500" bgColor ="<?echo ("$COLUMN_VALUE")?>"colspan="3">
+		<input type="text" name="name" size="10" maxlength="12">
+		(name<font color="red" should not include blank</font>please)
+		</td>
+ </tr>     
+ <!------------------------ID-------------------------------->
+ <tr>
+	<td bgColor="<?echo("COLUMN_NAME")?>" align="center">ID(ID)<img src="icon/check.gif"></td>
+	<td bgColor="<?echo("COLUMN_NAME")?>" colspan="3">
+		<input type="text" name="id" size="9" maxlength="10">
+		<font size=3>
+		<input type="button" value="Available ID" onclick="check_ID_Window('check_id.html')">
+		</font>
+		(5~10 English strings,<font color='red'></font> )
+		</font>
+	</td>
+ </tr>  
+ 
+ <!---------------------Password------------------------------->
+ <tr>
+    <td width ="140" bgColor ="<?echo ("$COLUMN_NAME")?>" align="center">Password<img src="icon/check.gif"></td>
+	<td width ="180" bgColor ="<?echo ("$COLUMN_VALUE")?>">
+	  <input type="password" name="passwd" size ="9" maxlength="8"> <font color="red">(Maximum 8 charater)</font>
+	</td>
+<!--------------------Check Password---------------------------->
+ <td width ="140" align="center"bgColor=#CFD0ED" align="center">CHEECK Password</td>
+ <td width ="180" align="center" bgColor ="<?echo ("$COLUMN_VALUE")?>">
+ <input type="password" name="repasswd" size="9" maxlength="8"></td>
+ </tr>
+ <!-----------------  Phone Number------------------------------>
+ <tr>
+ <td bgColor ="<?echo ("$COLUMN_VALUE")?>" align="center"> Phone number(Phone)</td>
+ <td bgColor ="<?echo ("$COLUMN_VALUE")?>" colspan="3">
+    <input type="text" name="cp1" size="4" maxlength="4"> -&nbsp;
+	<input type="text" name="cp2" size="4" maxlength="4"> -&nbsp;
+	<input type="text" name="cp3" size="4" maxlength="4">
+	</td>
+</tr>
+<!----------------- Submit ------------------------------------->
+<tr>
+	<td align="center" colspan="4" bgColor="#FFFFFF">
+	<font size=2>
+	<input type="button" value="Submit" onclick="checkInput(this.form)">
+	<input type="reset" value="Enter again">
+	</font>
+	</td>
+</tr>
+
+</table>
+</td></tr>
+</table><p>
+</form>
+
+<hr witth="650" noshade>
+
+<center>
+<font size=2>
+<li>PHP-MYSQL BBS<A HREF="address" TARGET="_blank">KIM</li></A>
+</font>
+</center>
+</body>
+</html>
+
+
+	
+	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <!-- Apply hooks to the on change text boxes for the fields--->
 
-<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="On the Spot Landing Page">
-	<title>On the Spot - Your Package Delivery Needs!</title>
-	
-	<link rel="stylesheet"> <!---href="bill.css"--->
+    <title>On the Spot - Your Package Delivery Needs!</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"></link>
 </head>
-
 <body>
-<ul class="navi">
-	<li class="navi"><a href="home.html">Home</a></li>
-	<li class="navi"><a class="active" href="order.html">Order</a></li>
-	<li class="navi"><a href="tracking.html">Tracking</a></li>
-	<li class="navi"><a href="contact & locations.html">Contact & Locations</a></li>
-	<li class="navi"><a href="about.html">About</a></li>
-	<li class="navi"><a href="help.html">Help</a></li>
-	<li class="navi"><a href="login.php">Login</a></li>
-	<li class="navi"><a href="loginstaff.php">Staff Login</a></li>
-</ul>
+  <div id="nav"><br>
+      <div id="nav_wrapper"><br>
+          <ul>
+              <li><a href="home.php">Home</a></li>
+              <li><a href="create_order.php">Order</a></li>
+              <li><a href="tracking.html">Tracking</a></li>
+              <li><a href="contact & about.html">Contact & About</a></li>
+              <li><a href="help.php">Help</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li><a href="loginstaff.php">Staff Login</a></li>
+          </ul>
+        </div>
+    </div>
+</body>
+
 <?php
 	session_start();
 	if (!isset($_SESSION['CUSTOMER_USERNAME'])){
-		header('Location: http://localhost/login.php') ;
+		header('Location: http://localhost/IFB299/login.php') ;
 	}
-	
-
-	
+		
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -44,28 +42,33 @@
 	} 
 	
 ?>
-
+<div class="boxhome3">
 <div id="order">	
 	<form action="review_order.php" onsubmit="return validate();">
+		
 		<fieldset>
 		<legend><h1>Order Form</h1></legend>
 		<br>
 		<p class="orderhead"><h2>Pickup Address</h2></p>
 
 			<p>
-				<label for="pickup_first_line">First Line</label>
-				<input type="text" name="pickup_first_line">
-				<label id="error_pickup_first_line"></label>
+				<h2>
+					<h2><label for="pickup_first_line">First Line</label>
+					<input type="text" name="pickup_first_line">
+					<label id="error_pickup_first_line"></label>
+				</h2>
 			</p>
 			
 			<p>
-				<label for="pickup_second_line">Second Line</label>
-				<input type="text" name="pickup_second_line">
-				<label id="error_pickup_second_line"></label>
+				<h2>
+					<h2><label for="pickup_second_line">Second Line</label>
+					<input type="text" name="pickup_second_line">
+					<label id="error_pickup_second_line"></label>
+				</h2>
 			</p>
 			
 			<p>
-				<label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
+				<h2><label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
 				<?php
 					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
 					$postcode_results = $link->query($fetch_postcodes);
@@ -80,19 +83,20 @@
 			</p>
 			
 			<p>
-				<label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
+			<p>
+				<h2><label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_suburb">
 				<label id="error_pickup_suburb"></label>
 			</p>
 			
 			<p>
-				<label for="pickup_state">State</label>  <!--- This should be a dropdown -->
+				<h2><label for="pickup_state">State</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_state">
 				<label id="error_pickup_state"></label>
 			</p>
 			
 			<p>
-				<label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
+				<h2><label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_country">
 				<label id="error_pickup_country"></label>
 			</p>
@@ -101,12 +105,12 @@
 		
 			<p class="orderhead"><h2>Recipent Details</h2></p>
 			<p>
-				<label for="recipent_first_name">First Name</label>
+				<h2><label for="recipent_first_name">First Name</label>
 				<input type="text" name="recipent_first_name">
 				<label id="error_recipent_first_name"></label>
 			</p>
 			<p>
-				<label for="recipent_last_name">Last Name</label>
+				<h2><label for="recipent_last_name">Last Name</label>
 				<input type="text" name="recipent_last_name">
 				<label id="error_recipent_last_name"></label>
 			</p>
@@ -116,19 +120,19 @@
 		<p class="orderhead"><h2>Drop-off Location</h2></p>
 		
 			<p>
-				<label for="dropoff_first_line">First Line</label>
+				<h2><label for="dropoff_first_line">First Line</label>
 				<input type="text" name="dropoff_first_line">
 				<label id="error_dropoff_first_line"></label>
 			</p>
 			
 			<p>
-				<label for="dropoff_second_line">Second Line</label>
+				<h2><label for="dropoff_second_line">Second Line</label>
 				<input type="text" name="dropoff_second_line">
 				<label id="error_dropoff_second_line"></label>
 			</p>
 			
 			<p>
-				<label for="dropoff_postcode">Postcode</label>
+				<h2><label for="dropoff_postcode">Postcode</label>
 				
 				<?php
 					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
@@ -145,19 +149,19 @@
 			</p>
 			
 			<p>
-				<label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
+				<h2><label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_suburb">
 				<label id="error_dropoff_suburb"></label>
 			</p>
 			
 			<p>
-				<label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
+				<h2><label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_state">
 				<label id="error_dropoff_state"></label>
 			</p>
 			
 			<p>
-				<label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
+				<h2><label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_country">
 				<label id="error_dropoff_country"></label>
 			</p>
@@ -165,40 +169,44 @@
 		<br>	
 		<p class="orderhead"><h2>Package Details</h2></p>
 			<p>
-				<label for="package_description">Description</label>
+				<h2><label for="package_description">Description</label>
 				<input type="text" name="package_description">
 				<label id="error_package_description"></label>
 			</p>
 			<p>
-				<label for="package_length">Length (cm)</label>
+				<h2><label for="package_length">Length (cm)</label>
 				<input type="text" name="package_length">
 				<label id="error_package_length"></label>
 			</p>
 			<p>
-				<label for="package_width">Width (cm)</label>
+				<h2><label for="package_width">Width (cm)</label>
 				<input type="text" name="package_width">
 				<label id="error_package_width"></label>
 			</p>
 			<p>
-				<label for="package_height">Height (cm)</label>
+				<h2><label for="package_height">Height (cm)</label>
 				<input type="text" name="package_height">
 				<label id="error_package_height"></label>
 			</p>
 			<p>
-				<label for="package_weight">Weight (g)</label>
+				<h2><label for="package_weight">Weight (g)</label>
 				<input type="text" name="package_weight">
 				<label id="error_package_weight"></label>
 			</p>
 			<p>
-				<label for="package_insurance">Insurance ($)</label>
+				<h2><label for="package_insurance">Insurance ($)</label>
 				<input type="text" name="package_insurance">
 				<label id="error_package_insurance"></label>
 			</p>
 		<p>
-			<input type="submit" value="Submit Order">
+			<tr>
+				<input type="submit" value="Submit Order"  class="btn-create">
+			</tr>
 		</p>
 		</fieldset>
 	</form>
+	
+</div>
 </div>
 </body>
 </html>
