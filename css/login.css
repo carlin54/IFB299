@@ -84,6 +84,15 @@ body{
   margin: 0 auto;
   margin-top: 10px;
 }
+.boxhome2{
+    width: 600px;
+  height: 420px;
+  text-align: left;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 .box1{
   width: 600px;
   height: 900px;
