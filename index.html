@@ -96,6 +96,18 @@ if(isset($_POST['add']))
 	}
 	.left{float: left; width: 600px;  margin-right:-3px;}
   .right{ float:right; width:600px; margin-left:-3px;}
+
+	table, th, td {
+	    border: 1px solid black;
+	    border-collapse: collapse;
+	}
+	td {
+	    text-align: center;
+	}
+	th{
+		text-align: center;
+	}
+
 	</style>
 </head>
 
@@ -161,18 +173,55 @@ if(isset($_POST['add']))
 			<label>Weight </label>
 			<input type="text" placeholder="Enter Weight" id="size" name="weight" style="width:150px;">  KG</input>
 		</h2>
-		<table>
+		<!--<table>-->
 			<tr>
 				<td><input type="submit" name="add" value="Calculate Cost" class="btn-home"></td>
 			</tr>
-		</table>
+		<!--</table>-->
 		<h2>
-			<label>Cost </label>
-			<input type="text" value="" id="calccost" name="calccost" style="width:70px" readonly>
+			<label>Total Cost </label>
+			<input type="text" value="" id="calccost" name="calccost" style="width:100px" readonly>
 			$
 		</h2>
 	</div>
 </form>
+</body>
+<body>
+	<div class="boxhome2">
+		<h4>Package details</h4>
+		<table style="width:100%">
+			<tr>
+				<th>Height*Length*width(cm)/6000 Or Weight(KG)</th>
+				<th>Cost($)</th>
+			</tr>
+			<tr>
+				<td>0~5</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>5~10</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>10~15</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>15~20</td>
+				<td>25</td>
+			</tr>
+			<tr>
+				<td>20~25</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>25~30</td>
+				<td>35</td>
+			</tr>
+		</table>
+		<h3>*Please contact us if your package over than 30.</h3>
+		<center><img src="home_logo.jpg" width="130" height="120"/></center>
+	</div>
 </body>
 
 <div class="bottomhome">
