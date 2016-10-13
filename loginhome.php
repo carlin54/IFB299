@@ -12,6 +12,7 @@
 <body>
   <div class="header">
       <h1>On the Spot - Your Package Delivery Needs!</h1>
+
   </div>
   <div id="nav"><br>
       <div id="nav_wrapper"><br>
@@ -27,7 +28,7 @@
     </div>
 </body>
 <h1>Welcome, <?php echo $_SESSION['CUSTOMER_USERNAME']; ?></h1>
-<h2>Your package information</h2>
+<h2>Your Package Information</h2>
 <body>
   <div class="container">
     <h1>
