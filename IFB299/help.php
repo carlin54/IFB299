@@ -4,6 +4,7 @@
 <head>
     <title>On the Spot - Your Package Delivery Needs!</title>
     <link rel="stylesheet" type="text/css" href="css/login.css"></link>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 </head>
 
 <body>
@@ -72,7 +73,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-		
+
   <input name="phone" placeholder="(0481)555-112" class="form-control" type="text">
     </div>
   </div>
