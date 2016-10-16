@@ -27,6 +27,7 @@
 <head>
     <title>On the Spot - Your Package Delivery Needs!</title>
     <link rel="stylesheet" type="text/css" href="css/login.css"></link>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 </head>
 <body>
   <div id="nav"><br>
