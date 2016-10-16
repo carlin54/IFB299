@@ -11,6 +11,7 @@
 <head>
     <!---<h1>On the Spot - Your Package Delivery Needs!</h1>--->
     <link rel="stylesheet" type="text/css" href="loginhomestyle.css"></link>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 </head>
 <body>
   <div class="header">
