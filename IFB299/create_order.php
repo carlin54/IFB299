@@ -4,6 +4,7 @@
 <head>
     <title>On the Spot - Your Package Delivery Needs!</title>
     <link rel="stylesheet" type="text/css" href="css/login.css"></link>
+    	<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 </head>
 <body>
   <div id="nav"><br>
@@ -26,7 +27,7 @@
 	if (!isset($_SESSION['CUSTOMER_USERNAME'])){
 		header('Location: http://localhost/IFB299/login.php') ;
 	}
-		
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -39,13 +40,13 @@
 		echo "<p>Debugging errno: " . mysqli_connect_errno() . PHP_EOL . "</p>";
 		echo "<p>Debugging error: " . mysqli_connect_error() . PHP_EOL . "</p>";
 		exit;
-	} 
-	
+	}
+
 ?>
 <div class="boxhome3">
-<div id="order">	
+<div id="order">
 	<form action="review_order.php" onsubmit="return validate();">
-		
+
 		<fieldset>
 		<legend><h1>Order Form</h1></legend>
 		<br>
@@ -58,7 +59,7 @@
 					<label id="error_pickup_first_line"></label>
 				</h2>
 			</p>
-			
+
 			<p>
 				<h2>
 					<h2><label for="pickup_second_line">Second Line</label>
@@ -66,43 +67,43 @@
 					<label id="error_pickup_second_line"></label>
 				</h2>
 			</p>
-			
+
 			<p>
 				<h2><label for="pickup_postcode">Postcode</label> <!--- This should be a dropdown -->
 				<?php
 					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
 					$postcode_results = $link->query($fetch_postcodes);
-	
+
 					echo "<select name='pickup_postcode'>";
 					while ($row = $postcode_results->fetch_array(MYSQLI_ASSOC)) {
 						echo "<option value='" . $row['POSTCODE'] . "'>" . $row['POSTCODE'] . "</option>";
 					}
-					echo "</select>";				
+					echo "</select>";
 				?>
 				<label id="error_pickup_postcode"></label>
 			</p>
-			
+
 			<p>
 			<p>
 				<h2><label for="pickup_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_suburb">
 				<label id="error_pickup_suburb"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="pickup_state">State</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_state">
 				<label id="error_pickup_state"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="pickup_country">Country</label>  <!--- This should be a dropdown -->
 				<input type="text" name="pickup_country">
 				<label id="error_pickup_country"></label>
 			</p>
-			
+
 		<br>
-		
+
 			<p class="orderhead"><h2>Recipent Details</h2></p>
 			<p>
 				<h2><label for="recipent_first_name">First Name</label>
@@ -114,59 +115,59 @@
 				<input type="text" name="recipent_last_name">
 				<label id="error_recipent_last_name"></label>
 			</p>
-		
+
 		<br>
-		
+
 		<p class="orderhead"><h2>Drop-off Location</h2></p>
-		
+
 			<p>
 				<h2><label for="dropoff_first_line">First Line</label>
 				<input type="text" name="dropoff_first_line">
 				<label id="error_dropoff_first_line"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="dropoff_second_line">Second Line</label>
 				<input type="text" name="dropoff_second_line">
 				<label id="error_dropoff_second_line"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="dropoff_postcode">Postcode</label>
-				
+
 				<?php
 					$fetch_postcodes = "SELECT * FROM `deliverable postcodes`";
 					$postcode_results = $link->query($fetch_postcodes);
-	
+
 					echo "<select name='dropoff_postcode'>";
 					while ($row = $postcode_results->fetch_array(MYSQLI_ASSOC)) {
 						echo "<option value='" . $row['POSTCODE'] . "'>" . $row['POSTCODE'] . "</option>";
 					}
-					echo "</select>";				
+					echo "</select>";
 				?>
 
 				<label id="error_dropoff_postcode"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="dropoff_suburb">Suburb</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_suburb">
 				<label id="error_dropoff_suburb"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="dropoff_state">State</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_state">
 				<label id="error_dropoff_state"></label>
 			</p>
-			
+
 			<p>
 				<h2><label for="dropoff_country">Country</label>  <!--- This should be a dropdown -->
 				<input type="text" name="dropoff_country">
 				<label id="error_dropoff_country"></label>
 			</p>
-		
-		<br>	
+
+		<br>
 		<p class="orderhead"><h2>Package Details</h2></p>
 			<p>
 				<h2><label for="package_description">Description</label>
@@ -205,7 +206,7 @@
 		</p>
 		</fieldset>
 	</form>
-	
+
 </div>
 </div>
 </body>
@@ -246,7 +247,7 @@ function validate_second_line(str, lbl){
 		lbl.innerHTML = '\tToo many characters entered (max : 48)!';
 		return false;
 	}
-	
+
 	return true;
 }
 function validate_postcode(str, lbl){
@@ -329,7 +330,7 @@ function validate_first_name(str, lbl){
 		lbl.innerHTML = '\tToo many characters (max : 16)!';
 		return false;
 	}
-	
+
 	return true;
 }
 function validate_last_line(str, lbl){
@@ -453,7 +454,7 @@ function validate() {
 	//there must be a better way to do this
 	//this is so fucking bad
 	//I fucking hate this
-	
+
 	var str_pickup_first_line = document.getElementsByName('pickup_first_line')[0].value;
 	var lbl_pickup_first_line = document.getElementById('error_pickup_first_line');
 	var str_pickup_second_line = document.getElementsByName('pickup_second_line')[0].value;
@@ -466,12 +467,12 @@ function validate() {
 	var lbl_pickup_state = document.getElementById('error_pickup_state');
 	var str_pickup_country = document.getElementsByName('pickup_country')[0].value;
 	var lbl_pickup_country = document.getElementById('error_pickup_country');
-	
+
 	var str_first_name = document.getElementsByName('recipent_first_name')[0].value;
 	var lbl_first_name = document.getElementById('error_recipent_first_name');
 	var str_last_name = document.getElementsByName('recipent_last_name')[0].value;
 	var lbl_last_name = document.getElementById('error_recipent_last_name');
-	
+
 	var str_dropoff_first_line = document.getElementsByName('pickup_first_line')[0].value;
 	var lbl_dropoff_first_line = document.getElementById('error_dropoff_first_line');
 	var str_dropoff_second_line = document.getElementsByName('dropoff_second_line')[0].value;
@@ -484,7 +485,7 @@ function validate() {
 	var lbl_dropoff_state = document.getElementById('error_dropoff_state');
 	var str_dropoff_country = document.getElementsByName('dropoff_country')[0].value;
 	var lbl_dropoff_country = document.getElementById('error_dropoff_country');
-	
+
 	var str_description = document.getElementsByName('package_description')[0].value;
 	var lbl_description = document.getElementById('error_package_description');
 	var str_length = document.getElementsByName('package_length')[0].value;
@@ -497,10 +498,10 @@ function validate() {
 	var lbl_weight = document.getElementById('error_package_weight');
 	var str_insurance = document.getElementsByName('package_insurance')[0].value;
 	var lbl_insurance = document.getElementById('error_package_insurance');
-	
-	
-	
-	  
+
+
+
+
 	// pickup
 	return	validate_first_line		(str_pickup_first_line, 	lbl_pickup_first_line)
 	&& 		validate_second_line	(str_pickup_second_line, 	lbl_pickup_second_line)
@@ -508,11 +509,11 @@ function validate() {
 	&& 		validate_suburb			(str_pickup_suburb, 		lbl_pickup_suburb)
 	&& 		validate_state			(str_pickup_state, 			lbl_pickup_state)
 	&& 		validate_country		(str_pickup_country, 		lbl_pickup_country)
-	
+
 	// name
 	&& 		validate_first_name		(str_first_name, 			lbl_first_name)
 	&& 		validate_last_line		(str_last_name, 			lbl_last_name)
-	
+
 	// dropoff
 	&& 		validate_first_line		(str_dropoff_first_line, 	lbl_dropoff_first_line)
 	&& 		validate_second_line	(str_dropoff_second_line, 	lbl_dropoff_second_line)
@@ -528,8 +529,8 @@ function validate() {
 	&& 		validate_height			(str_height, 				lbl_height)
 	&& 		validate_weight			(str_weight, 				lbl_weight)
 	&& 		validate_insurance		(str_insurance, 			lbl_insurance);
-	
-	
+
+
 }
 
 </script>
