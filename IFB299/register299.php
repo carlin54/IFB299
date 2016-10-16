@@ -25,12 +25,12 @@
 
 		$validUser = 1;
 		if(
-		isset($_POST['CUSTOMER_FIRST_NAME']) && 
-		isset($_POST['CUSTOMER_LAST_NAME']) && 
-		isset($_POST['CUSTOMER_USERNAME']) && 
-		isset($_POST['CUSTOMER_PASSWORD']) && 
-		isset($_POST['CUSTOMER_PASSWORD1']) && 
-		isset($_POST['CUSTOMER_MOBILE']) && 
+		isset($_POST['CUSTOMER_FIRST_NAME']) &&
+		isset($_POST['CUSTOMER_LAST_NAME']) &&
+		isset($_POST['CUSTOMER_USERNAME']) &&
+		isset($_POST['CUSTOMER_PASSWORD']) &&
+		isset($_POST['CUSTOMER_PASSWORD1']) &&
+		isset($_POST['CUSTOMER_MOBILE']) &&
 		isset($_POST['CUSTOMER_HOMEPHONE'])
 		){
 			$CUSTOMER_FIRST_NAME = $_POST['CUSTOMER_FIRST_NAME'];
@@ -40,7 +40,7 @@
 			$CUSTOMER_PASSWORD1 = $_POST['CUSTOMER_PASSWORD1'];
 			$CUSTOMER_MOBILE = $_POST['CUSTOMER_MOBILE'];
 			$CUSTOMER_HOMEPHONE = $_POST['CUSTOMER_HOMEPHONE'];
-			
+
 			if ($CUSTOMER_PASSWORD != $CUSTOMER_PASSWORD1) {
 				echo '<p class="unsuccessful">Passwords did not match please try again!</p>';
 				$validUser = 0;
@@ -72,6 +72,7 @@
 <head>
     <title>On the Spot - Your Package Delivery Needs!</title>
     <link rel="stylesheet" type="text/css" href="css/register.css"></link>
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 </head>
 <body>
   <div id="nav"><br>
