@@ -10,11 +10,11 @@
   <div id="nav"><br>
       <div id="nav_wrapper"><br>
           <ul>
-              <li><a href="home.php">Home</a></li>
+              <li><a href="S2home.php">Home</a></li>
               <li><a href="create_order.php">Order</a></li>
-              <li><a href="tracking.html">Tracking</a></li>
-              <li><a href="contact & about.html">Contact & About</a></li>
-              <li><a href="help.php">Help</a></li>
+              <li><a href="S2tracking.html">Tracking</a></li>
+              <li><a href="S2contact & about.html">Contact & About</a></li>
+              <li><a href="S2help.php">Help</a></li>
               <li><a href="login.php">Login</a></li>
               <li><a href="loginstaff.php">Staff Login</a></li>
           </ul>
