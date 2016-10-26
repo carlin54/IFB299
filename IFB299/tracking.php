@@ -14,7 +14,7 @@
 	<li class="navi"><a href="about.html">About</a></li>
 </ul>-->
 <body>
-  <div id="nav"><br>
+  <!---<div id="nav"><br>
       <div id="nav_wrapper"><br>
           <ul>
               <li><a href="home.php">Home</a></li>
@@ -26,7 +26,20 @@
               <li><a href="loginstaff.php">Staff Login</a></li>
           </ul>
         </div>
-    </div>
+    </div>--->
+		<div id="nav"><br>
+				<div id="nav_wrapper"><br>
+						<ul>
+								<li><a href="S2home.php">Home</a></li>
+								<li><a href="S2create_order.php">Order</a></li>
+								<li><a href="S2tracking.html">Tracking</a></li>
+								<li><a href="S2contact & about.html">Contact & About</a></li>
+								<li><a href="S2help.php">Help</a></li>
+								<li><a href="loginhome.php">C home</a></li>
+								<li><a href="customerlogout.php">Customer Logout</a></li>
+						</ul>
+					</div>
+			</div>
 </body>
 <div class="boxhome6">
 	<form action="tracking.php">
