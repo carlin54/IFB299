@@ -188,14 +188,6 @@ if(isset($_POST['add']))
 	</div>
 </body>
 
-
-
-
-
-
-
-
-
 <div class="bottomhome">
 	<div class="left">
 		Opening Hours<br>
