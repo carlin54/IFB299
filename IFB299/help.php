@@ -22,7 +22,7 @@
 </ul>
 
 
-  <div class="box1">
+  <div class="boxhelp">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
 <fieldset>
@@ -33,11 +33,11 @@
 <!-- Text input-->
 <form action="tracking.php">
 <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>
+  <!--<label class="col-md-4 control-label">First Name</label>-->
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+  <input  name="first_name" placeholder="First Name*" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -45,22 +45,22 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" >Last Name</label>
+  <!--<label class="col-md-4 control-label" >Last Name</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+  <input name="last_name" placeholder="Last Name*" class="form-control"  type="text">
     </div>
   </div>
 </div>
 
 <!-- Text input-->
        <div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>
+  <!--<label class="col-md-4 control-label">E-Mail</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="email" placeholder="E-Mail Address*" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -69,12 +69,12 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Phone #</label>
+  <!--<label class="col-md-4 control-label">Phone #</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
 
-  <input name="phone" placeholder="(0481)555-112" class="form-control" type="text">
+  <input name="phone" placeholder="Phone Number*" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -82,11 +82,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Address</label>
+  <!--<label class="col-md-4 control-label">Address</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="address" placeholder="Address" class="form-control" type="text">
+  <input name="address" placeholder="Address*" class="form-control" type="text">
     </div>
   </div>
 </div>
@@ -94,11 +94,11 @@
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">City</label>
+  <!--<label class="col-md-4 control-label">City</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="city" placeholder="City" class="form-control"  type="text">
+  <input name="city" placeholder="City*" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -124,15 +124,15 @@
   </div>
 </div>
 </div>
-
+<br>
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Zip Code</label>
+  <!--<label class="col-md-4 control-label">Zip Code</label>-->
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-  <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+  <input name="zip" placeholder="Zip Code*" class="form-control"  type="text">
     </div>
 </div>
 </div>
