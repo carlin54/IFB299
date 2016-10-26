@@ -10,7 +10,7 @@ body{
 }
 #nav_wrapper{
   height: 100px;
-  width: 900px;
+  width: 1000px;
   background: #377D7A;
   margin-left: auto;
   margin-right: auto;
@@ -24,7 +24,7 @@ body{
   list-style: none;
   display: inline;
   font-weight: bold;
-  padding: 15px;
+  padding: 20px;
 }
 #nav_wrapper a{
   color: white;
@@ -95,7 +95,7 @@ body{
   border        : 1px solid #ddd;
   border-radius : 4px;
   box-shadow    : 0 0 0.5em rgba(0,0,0,0.0625);
-  background-color: rgba(36, 54, 66, 0.7);
+  background-color: rgba(246,246,246, 0.5);
 }
 
 .tabbed > input:checked + section > h1{
@@ -107,7 +107,7 @@ body{
   display : none;
 }
 input[type="text"],input[id="package_id"]{
-  height: 45px;
+  height:30px;
   width: 300px;
   font-size: 18px;
   border: none;
@@ -138,7 +138,7 @@ h1{
   background-color: rgba(246,246,246, 0.7);
   border-radius: 4px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 80px;
 }
 .boxhome6{
     width: 600px;
@@ -147,5 +147,5 @@ h1{
   background-color: rgba(246,246,246, 0.7);
   border-radius: 4px;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 100px;
 }
