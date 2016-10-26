@@ -16,7 +16,7 @@ body{
 }*/
 #nav_wrapper{
   height: 100px;
-  width: 900px;
+  width: 1000px;
   background: #377D7A;
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +30,7 @@ body{
   list-style: none;
   display: inline;
   font-weight: bold;
-  padding: 15px;
+  padding: 20px;
 }
 #nav_wrapper a{
   color: white;
@@ -75,6 +75,15 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+.boxhelp{
+  width: 500px;
+  height: 830px;
+  text-align: center;
+  background-color: rgba(246,246,246, 0.7);
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
 .boxhome{
   width: 600px;
   height: 580px;
@@ -94,8 +103,8 @@ body{
   margin-top: 10px;
 }
 .boxhome3{
-    width: 600px;
-  height: 2270px;
+    width: 700px;
+  height: 2350px;
   text-align: left;
   background-color: rgba(246,246,246, 0.7);
   border-radius: 4px;
