@@ -24,7 +24,8 @@ ALTER TABLE `Customers Dropoff Addresses`
 	DROP FOREIGN KEY `Customers_Dropoff_Addresses_fk_CUSTOMER_ID`;
 ALTER TABLE `Addresses` 
 	DROP FOREIGN KEY `Addresses_fk_ADDRESS_POSTCODE`;
-	
+
+DROP TABLE IF EXISTS `Help`;	
 DROP TABLE IF EXISTS `Customers`;
 DROP TABLE IF EXISTS `Orders`;
 DROP TABLE IF EXISTS `Cost Weight`;
